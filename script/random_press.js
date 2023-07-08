@@ -88,7 +88,7 @@ function randomsob() {
             openchoice();
             document.getElementById('randomsod').innerHTML = '<video src="files/video/theend_press.mp4" autoplay style="max-width: 70%"></video>';
             break;
-        case health < 1:
+        case health <= 1:
             posle.style.zIndex = "4";
             posle.style.opacity = "1";
             spname.textContent = "...";
@@ -97,19 +97,19 @@ function randomsob() {
             break;
         default:
             random = Math.floor(Math.random() * 5) + 1;
-            if (money < 100000) {
-                if (random === 1) {
+            switch (random) {
+                case 1:
                     openchoice();
                     rname.textContent = robj[trackindex = 0].name;
                     rchoice1.textContent = robj[trackindex = 0].choice1;
                     rchoice2.textContent = robj[trackindex = 0].choice2;
-                };
-                if (random === 2) {
+                    break;
+                case 2:
                     openchoice();
                     rname.textContent = robj[trackindex = 1].name;
                     rchoice1.textContent = robj[trackindex = 1].choice1;
                     rchoice2.textContent = robj[trackindex = 1].choice2;
-                };
+                    break;
             }
             break;
     }
