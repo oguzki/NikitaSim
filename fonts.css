@@ -1,0 +1,19 @@
+@font-face {
+	font-family: 'Ubuntu';
+	src: url(files/fonts/Ubuntu.ttf);
+}
+
+@font-face {
+	font-family: 'HemiHead';
+	src: url(files/fonts/HemiHead.otf);
+}
+
+@font-face {
+	font-family: 'PoiretOne';
+	src: url(files/fonts/PoiretOne.ttf);
+}
+
+@font-face {
+	font-family: 'OpenSans';
+	src: url(files/fonts/OpenSans-Light.ttf);
+}

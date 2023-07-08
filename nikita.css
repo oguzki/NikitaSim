@@ -1,0 +1,148 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: 0;
+}
+
+h3 {
+    font-family: ubuntu;
+    color: white;
+}
+
+h2 {
+    font-family: ubuntu;
+    color: white;
+}
+
+.flag {
+    width: 50px;
+    padding: 0px 10px;
+}
+
+.k {
+    margin: 0px 5px;
+}
+
+.gems {
+    width: 40px;
+    height: 40px;
+}
+
+.bb {
+    border: 1px black solid;
+    border-radius: 3px;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+    transition: .7s;
+}
+
+.bb:hover {
+    transform: scale(1.1);
+    color: white;
+    border: 1px solid white;
+    background-color: #424242;
+}
+
+.disc {
+    color: white;
+    font-family: ubuntu;
+    text-align: center;
+}
+
+.disclink {
+    color: red;
+    font-family: ubuntu;
+    text-decoration: none;
+}
+
+.menubutton {
+    background-color: #424242;
+    color: white;
+    border: 1px solid white;
+    font-family: ubuntu;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menubutton:disabled {
+    background-color: red;
+}
+
+.menu {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 3;
+    opacity: 1;
+    overflow-x: hidden;
+    transition: .5s;
+    background-color: rgba(0, 0, 0, 0.205);
+}
+
+.randomobj {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: -1;
+    opacity: 0;
+    overflow-x: hidden;
+    transition: .5s;
+    background-color: rgba(0, 0, 0, 0.68);
+}
+
+.menu2 {
+    width: 0;
+    height: 1920px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 3;
+    opacity: 1;
+    overflow-x: hidden;
+    transition: .5s;
+    background-color: rgba(0, 0, 0, 0.205);
+}
+
+.menu3 {
+    width: 0;
+    height: 1920px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+    opacity: 1;
+    overflow-x: hidden;
+    transition: .5s;
+    background-color: rgba(255, 0, 0, 0.205);
+}
+
+.choicebutton {
+    font-family: ubuntu;
+    padding: 5px;
+    border: 1px solid black;
+    margin: 0px 10px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.choicebutton:hover {
+    filter: invert(1);
+}
+
+mark {
+    background-color: #424242;
+    color: white;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url(../fonts/Ubuntu.ttf);
+}
