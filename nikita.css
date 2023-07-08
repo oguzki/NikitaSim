@@ -141,8 +141,3 @@ mark {
     background-color: #424242;
     color: white;
 }
-
-@font-face {
-    font-family: 'Ubuntu';
-    src: url(../fonts/Ubuntu.ttf);
-}
