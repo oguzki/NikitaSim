@@ -129,38 +129,40 @@ function openchoice() {
 }
 
 function randomsob() {
-    if (money >= 100000) {
-        openchoice();
-        document.getElementById('randomsod').innerHTML = '<video src="files/video/theend.mp4" autoplay style="max-width: 70%"></video>';
-    } else {
-        if (health < 1) {
+    switch (true) {
+        case money >= 100000:
+            openchoice();
+            document.getElementById('randomsod').innerHTML = '<video src="files/video/theend.mp4" autoplay style="max-width: 70%"></video>';
+            break;
+        case health <= 1:
             posle.style.zIndex = "4";
             posle.style.opacity = "1";
             spname.textContent = "Инсульт жопы";
             pname.textContent = "Вы не дожили до следующего дня...";
             ballzb.textContent = "смэрть"
-        } else {
+            break;
+        default:
             random = Math.floor(Math.random() * 8) + 1;
-            if (money < 100000) {
-                if (random === 1) {
+            switch (random) {
+                case 1:
                     openchoice();
                     rname.textContent = robj[trackindex = 0].name;
                     rchoice1.textContent = robj[trackindex = 0].choice1;
                     rchoice2.textContent = robj[trackindex = 0].choice2;
-                };
-                if (random === 2) {
+                    break;
+                case 2:
                     openchoice();
                     rname.textContent = robj[trackindex = 1].name;
                     rchoice1.textContent = robj[trackindex = 1].choice1;
                     rchoice2.textContent = robj[trackindex = 1].choice2;
-                };
-                if (random === 3) {
+                    break;
+                case 3:
                     openchoice();
                     rname.textContent = robj[trackindex = 2].name;
                     rchoice1.textContent = robj[trackindex = 2].choice1;
                     rchoice2.textContent = robj[trackindex = 2].choice2;
-                }
+                    break;
             }
-        }
+            break;
     }
 }

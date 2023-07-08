@@ -83,17 +83,19 @@ function openchoice() {
 }
 
 function randomsob() {
-    if (money >= 100000) {
-        openchoice();
-        document.getElementById('randomsod').innerHTML = '<video src="files/video/theend_press.mp4" autoplay style="max-width: 70%"></video>';
-    } else {
-        if (health < 1) {
+    switch (true) {
+        case money >= 100000:
+            openchoice();
+            document.getElementById('randomsod').innerHTML = '<video src="files/video/theend_press.mp4" autoplay style="max-width: 70%"></video>';
+            break;
+        case health < 1:
             posle.style.zIndex = "4";
             posle.style.opacity = "1";
             spname.textContent = "...";
             pname.textContent = "Вы не дожили до следующего дня...";
             ballzb.textContent = "принять судьбу"
-        } else {
+            break;
+        default:
             random = Math.floor(Math.random() * 5) + 1;
             if (money < 100000) {
                 if (random === 1) {
@@ -109,6 +111,6 @@ function randomsob() {
                     rchoice2.textContent = robj[trackindex = 1].choice2;
                 };
             }
-        }
+            break;
     }
 }
