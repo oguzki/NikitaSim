@@ -85,7 +85,7 @@ function openchoice() {
 function randomsob() {
     if (money >= 100000) {
         openchoice();
-        document.getElementById('randomsod').innerHTML = '<video src="files/video/theend.mp4" autoplay style="max-width: 70%"></video>';
+        document.getElementById('randomsod').innerHTML = '<video src="files/video/theend_press.mp4" autoplay style="max-width: 70%"></video>';
     } else {
         if (health < 1) {
             posle.style.zIndex = "4";
