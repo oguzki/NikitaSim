@@ -14,21 +14,22 @@ function start() {
 
 function resume() {
     var code = document.getElementById('parol').value;
-    if (code === "wow") {
-        health = 100;
-        year = 23;
-        day = 12;
-        mon = 12;
-        money = 100000;
-        healthchange();
-        daychange();
-        monchange();
-        yearchange();
-        moneychange();
-        kartinkaprikol();
-        closeMenu();
-    } else {
-        if (code === "necoarc") {
+    switch (code) {
+        case "ez":
+            health = 100;
+            year = 23;
+            day = 12;
+            mon = 12;
+            money = 100000;
+            healthchange();
+            daychange();
+            monchange();
+            yearchange();
+            moneychange();
+            kartinkaprikol();
+            closeMenu();
+            break;
+        case "neco-neco":
             health = 100;
             year = 23;
             day = 1;
@@ -39,9 +40,10 @@ function resume() {
             monchange();
             yearchange();
             moneychange();
-            document.getElementById('menu_prikol').innerHTML = '<video src="files/video/necoarc-anekdot_press.mp4" controls autoplay style="max-width: 50%"></video>'
+            document.getElementById('menu_prikol').innerHTML = '<video src="files/video/necoarc-anekdot.mp4" controls autoplay style="max-width: 50%"></video>'
             closeMenu();
-        } else {
+            break;
+        default:
             var a0 = Number(code.slice(0, 3));
             var a1 = Number(code.slice(4, 6));
             var a2 = Number(code.slice(7, 9));
@@ -59,7 +61,7 @@ function resume() {
             moneychange();
             kartinkaprikol();
             closeMenu();
-        }
+            break;
     }
 }
 
