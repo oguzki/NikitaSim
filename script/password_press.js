@@ -40,7 +40,7 @@ function resume() {
             monchange();
             yearchange();
             moneychange();
-            document.getElementById('menu_prikol').innerHTML = '<video src="files/video/necoarc-anekdot.mp4" controls autoplay style="max-width: 50%"></video>'
+            document.getElementById('menu_prikol').innerHTML = '<video src="files/video/necoarc-anekdot_press.mp4" controls autoplay style="max-width: 50%"></video>'
             closeMenu();
             break;
         default:
