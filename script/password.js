@@ -48,7 +48,7 @@ function resume() {
             var a1 = Number(code.slice(4, 6));
             var a2 = Number(code.slice(7, 9));
             var a3 = Number(code.slice(10, 12));
-            var a4 = Number(code.slice(14));
+            var a4 = Number(code.slice(15));
             health = a0;
             year = a1;
             day = a2;
