@@ -143,41 +143,41 @@
 	}
 
 	function heal() {
-		if (health === 100) {
-			posle.style.zIndex = "4";
-			posle.style.opacity = "1";
-			var suma = (100 - health) * 6;
-			spname.textContent = "Добро пожаловать в больницу";
-			pname.textContent = "Ты полностью здоров";
-			health = 100;
-			money = money - suma;
-			healthchange();
-			moneychange();
-		} else {
-			if (money <= 0) {
+		switch (true) {
+			case health === 100:
 				posle.style.zIndex = "4";
 				posle.style.opacity = "1";
-				spname.textContent = "Добро пожаловать в больницу";
+				var suma = (100 - health) * 6;
+				spname.textContent = "Добро пожаловать в дурку";
+				pname.textContent = "Чел, ты полностью здоров...";
+				health = 100;
+				money = money - suma;
+				healthchange();
+				moneychange();
+				break;
+			case money <= 0:
+				posle.style.zIndex = "4";
+				posle.style.opacity = "1";
+				spname.textContent = "Добро пожаловать в дурку";
 				pname.textContent = "У вас нет денег";
-			} else {
-				if (health === 0) {
-					posle.style.zIndex = "4";
-					posle.style.opacity = "1";
-					spname.textContent = "...";
-					pname.textContent = "Вы не успели добраться до больницы и умерли...";
-					ballzb.textContent = "принять судьбу"
-				} else {
-					posle.style.zIndex = "4";
-					posle.style.opacity = "1";
-					var suma = (100 - health) * 6;
-					spname.textContent = "Добро пожаловать в больницу";
-					pname.textContent = "Вы востановили здоровье. Стоимость лечения составила " + suma + " рублей.";
-					health = 100;
-					money = money - suma;
-					healthchange();
-					moneychange();
-				}
-			}
+				break;
+			case health === 0:
+				posle.style.zIndex = "4";
+				posle.style.opacity = "1";
+				spname.textContent = "...";
+				pname.textContent = "Вы не успели добраться до больницы и умерли...";
+				ballzb.textContent = "принять судьбу"
+				break;
+			default:
+				posle.style.zIndex = "4";
+				posle.style.opacity = "1";
+				var suma = (100 - health) * 6;
+				spname.textContent = "Добро пожаловать в дурку";
+				pname.textContent = "Вы востановили здоровье. Стоимость лечения составила " + suma + " рублей.";
+				health = 100;
+				money = money - suma;
+				healthchange();
+				moneychange();
 		}
 	}
 
@@ -186,9 +186,9 @@
 		kaz1.style.width = "0";
 		music.src = "files/audio/delete.mp3";
 		audio.load();
-		c1.textContent = "";
-		c2.textContent = "";
-		c3.textContent = "";
+		c1.textContent = "-";
+		c2.textContent = "-";
+		c3.textContent = "-";
 	}
 
 	function closeMenu() {

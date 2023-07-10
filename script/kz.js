@@ -45,7 +45,7 @@ function kzpicks() {
     //кристал номер 1
     switch (r1) {
         case 7:
-            c1.innerHTML = '<img class="gems" src="files/pic/gems/6.png">';
+            c1.innerHTML = '<img class="gems" src="files/pic/gems/7.png">';
             break;
         case 6:
             c1.innerHTML = '<img class="gems" src="files/pic/gems/6.png">';
@@ -69,9 +69,6 @@ function kzpicks() {
 
     //кристал номер 2
     switch (r2) {
-        case 6:
-            c2.innerHTML = '<img class="gems" src="files/pic/gems/6.png">';
-            break;
         case 5:
             c2.innerHTML = '<img class="gems" src="files/pic/gems/5.png">';
             break;
