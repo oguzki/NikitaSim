@@ -10,7 +10,7 @@ let userLanguage = navigator.language || navigator.userLanguage;
 console.log("Язык пользователя: " + userLanguage);
 
 switch (userLanguage) {
-    case "ru":
+    case "en":
         lang_menu1.textContent = "start";
         lang_menu2.textContent = "or enter the password";
         lang_menu3.textContent = "continue";
