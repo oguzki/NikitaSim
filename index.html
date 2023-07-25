@@ -21,19 +21,19 @@
 		<div
 			style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%; background-color: #212121;">
 			<h2 style="color: white; font-family: ubuntu;">NikitaSim 2.1.2 (beta)</h2>
-			<button class="bb" onclick="start()" autofocus id="lang1">начать</button>
+			<button class="bb" onclick="start()" autofocus id="lang_menu1">начать</button>
 			<div style="margin: 10px; text-align: center;">
-				<h3 id="lang2">или введите пароль</h3>
+				<h3 id="lang_menu2">или введите пароль</h3>
 				<input id="parol" size="30" style="text-align: center">
-				<button class="bb" onclick="resume()" id="lang3">продолжить</button>
+				<button class="bb" onclick="resume()" id="lang_menu3">продолжить</button>
 			</div>
-			<h3 class="disc" id="lang4">данная игра является шуточной и не имеет ничего общего с реальностью (кроме
+			<h3 class="disc" id="lang_menu4">данная игра является шуточной и не имеет ничего общего с реальностью (кроме
 				Никиты)</h3>
 			<h3 class="disc"><a class="disclink" href="https://github.com/oguzki" target="_blank">огузки
 					corp.</a>, 2023
 			</h3>
 			<div>
-				<h4 class="disc">вы представитель прессы? опробуйте <a class="disclink"
+				<h4 class="disc" id="lang_menu5">вы представитель прессы? опробуйте <a class="disclink"
 						href="https://oguzki.github.io/NikitaSim/press" target="_blank">press release</a></h4>
 			</div>
 		</div>
@@ -41,7 +41,7 @@
 	<div id="randomobj" class="randomobj">
 		<div id="randomsod"
 			style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%;">
-			<h3 id="lang6">вау, это же случайное событие</h3>
+			<h3 id="lang_game1">вау, это же случайное событие</h3>
 			<div style="margin: 30px; text-align: center;">
 				<h2 id="rname">test</h2>
 			</div>
@@ -112,6 +112,7 @@
 <script src="script/time.js"></script>
 <script src="script/random.js"></script>
 <script src="script/kz.js"></script>
+<script src="script/localization.js"></script>
 
 <script>
 
