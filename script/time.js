@@ -3,6 +3,7 @@ const menu_image = document.getElementById('menu_image');
 function nextDay() {
     day = day + 1;
     randomsob();
+    prikoli();
     if (mon === 2) {
         if (day === 29) {
             nextMon();
@@ -20,21 +21,11 @@ function nextDay() {
     }
 }
 
-function kartinkaprikol() {
-    if (mon >= 5) {
-        menu_image.src = "files/pic/leto.jpg";
-    }
-    if (mon >= 11 || mon === 1) {
-        menu_image.src = "files/pic/zima.jpg";
-    }
-}
-
 function nextMon() {
     mon = mon + 1;
     day = 1;
     monchange();
     daychange();
-    kartinkaprikol();
 }
 function nextYear() {
     year = year + 1;

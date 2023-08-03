@@ -7,7 +7,7 @@
 	<link rel="icon" sizes="192x192" href="files/pic/oguzki.png">
 	<title>NikitaSim</title>
 	<link rel="stylesheet" href="nikita.css">
-	<link rel="stylesheet" href="fonts.css">
+	<link rel="stylesheet" href="https://rizobyte.github.io/font-base/fonts.css">
 </head>
 
 <style>
@@ -20,7 +20,7 @@
 	<div id="mainmenu" class="menu">
 		<div
 			style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%; background-color: #212121;">
-			<h2 style="color: white; font-family: ubuntu;">NikitaSim 2.1.2 (beta)</h2>
+			<h2 style="color: white; font-family: ubuntu;">NikitaSim 2.2 (beta)</h2>
 			<button class="bb" onclick="start()" autofocus id="lang_menu1">начать</button>
 			<div style="margin: 10px; text-align: center;">
 				<h3 id="lang_menu2">или введите пароль</h3>
@@ -104,7 +104,6 @@
 		<div id="menu_prikol">
 			<img src="files/pic/zima.jpg" id="menu_image" style="max-width: 70%">
 		</div>
-		<h1 class="disc">родная самара)))</h1>
 	</div>
 </body>
 
@@ -113,6 +112,7 @@
 <script src="script/random.js"></script>
 <script src="script/kz.js"></script>
 <script src="script/localization.js"></script>
+<script src="script/prikoli.js"></script>
 
 <script>
 
@@ -165,7 +165,7 @@
 			case health === 0:
 				posle.style.zIndex = "4";
 				posle.style.opacity = "1";
-				spname.textContent = "...";
+				spname.textContent = "инсульт жопы";
 				pname.textContent = "Вы не успели добраться до больницы и умерли...";
 				ballzb.textContent = "принять судьбу"
 				break;
