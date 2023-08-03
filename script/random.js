@@ -150,7 +150,6 @@ function choice2() {
                 pname.textContent = "Вы захавали соль и вас, сделайте удивлённое лицо, накрыло. Вы проснулись на следующий день и потеряли 15 здоровья.";
                 health = health - 15;
                 healthchange();
-                nextDay();
             }
             break;
     }
