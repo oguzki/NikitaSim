@@ -42,71 +42,15 @@ function kazich() {
 }
 
 function kzpicks() {
+
     //кристал номер 1
-    switch (r1) {
-        case 7:
-            c1.innerHTML = '<img class="gems" src="files/pic/gems/7.png">';
-            break;
-        case 6:
-            c1.innerHTML = '<img class="gems" src="files/pic/gems/6.png">';
-            break;
-        case 5:
-            c1.innerHTML = '<img class="gems" src="files/pic/gems/5.png">';
-            break;
-        case 4:
-            c1.innerHTML = '<img class="gems" src="files/pic/gems/4.png">';
-            break;
-        case 3:
-            c1.innerHTML = '<img class="gems" src="files/pic/gems/3.png">';
-            break;
-        case 2:
-            c1.innerHTML = '<img class="gems" src="files/pic/gems/2.png">';
-            break;
-        case 1:
-            c1.innerHTML = '<img class="gems" src="files/pic/gems/1.png">';
-            break;
-    }
+    c1.innerHTML = '<img class="gems" src="files/pic/gems/' + r1 + '.png">';
 
     //кристал номер 2
-    switch (r2) {
-        case 5:
-            c2.innerHTML = '<img class="gems" src="files/pic/gems/5.png">';
-            break;
-        case 4:
-            c2.innerHTML = '<img class="gems" src="files/pic/gems/4.png">';
-            break;
-        case 3:
-            c2.innerHTML = '<img class="gems" src="files/pic/gems/3.png">';
-            break;
-        case 2:
-            c2.innerHTML = '<img class="gems" src="files/pic/gems/2.png">';
-            break;
-        case 1:
-            c2.innerHTML = '<img class="gems" src="files/pic/gems/1.png">';
-            break;
-    }
+    c2.innerHTML = '<img class="gems" src="files/pic/gems/' + r2 + '.png">';
 
     //кристал номер 3
-    switch (r3) {
-        case 6:
-            c3.innerHTML = '<img class="gems" src="files/pic/gems/6.png">';
-            break;
-        case 5:
-            c3.innerHTML = '<img class="gems" src="files/pic/gems/5.png">';
-            break;
-        case 4:
-            c3.innerHTML = '<img class="gems" src="files/pic/gems/4.png">';
-            break;
-        case 3:
-            c3.innerHTML = '<img class="gems" src="files/pic/gems/3.png">';
-            break;
-        case 2:
-            c3.innerHTML = '<img class="gems" src="files/pic/gems/2.png">';
-            break;
-        case 1:
-            c3.innerHTML = '<img class="gems" src="files/pic/gems/1.png">';
-            break;
-    }
+    c3.innerHTML = '<img class="gems" src="files/pic/gems/' + r3 + '.png">';
 
     kzcheck();
 }
