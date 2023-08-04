@@ -1,0 +1,47 @@
+#mainmenu {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 3;
+    opacity: 1;
+    overflow-x: hidden;
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    background-color: #212121;
+}
+
+.mainmenu-button {
+    border: 1px black solid;
+    border-radius: 3px;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    margin: 3px 0px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.mainmenu-button:hover {
+    transform: scale(1.03);
+    color: white;
+    border: 1px solid white;
+    background-color: #424242;
+}
+
+.mainmenu-disc {
+    color: white;
+    font-family: ubuntu;
+    text-align: center;
+}
+
+.mainmenu-disclink {
+    color: red;
+    font-family: ubuntu;
+    text-decoration: none;
+}
