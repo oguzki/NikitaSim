@@ -9,7 +9,7 @@ function start() {
     daychange();
     monchange();
     yearchange();
-    closeMenu();
+    close_mainmenu();
 }
 
 function resume() {
@@ -27,7 +27,7 @@ function resume() {
             yearchange();
             moneychange();
             kartinkaprikol();
-            closeMenu();
+            close_mainmenu();
             break;
         case "necoarc":
             health = 100;
@@ -41,7 +41,7 @@ function resume() {
             yearchange();
             moneychange();
             document.getElementById('menu_prikol').innerHTML = '<video src="files/video/necoarc-anekdot.mp4" controls autoplay style="max-width: 50%"></video>'
-            closeMenu();
+            close_mainmenu();
             break;
         default:
             var a0 = Number(code.slice(0, 3));
@@ -60,7 +60,7 @@ function resume() {
             yearchange();
             moneychange();
             kartinkaprikol();
-            closeMenu();
+            close_mainmenu();
             break;
     }
 }

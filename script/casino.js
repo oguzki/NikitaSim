@@ -1,6 +1,6 @@
-var c1 = document.getElementById('chislo1');
-var c2 = document.getElementById('chislo2');
-var c3 = document.getElementById('chislo3');
+var n1 = document.getElementById('casino_number1');
+var n2 = document.getElementById('casino_number2');
+var n3 = document.getElementById('casino_number3');
 
 const winlose = document.getElementById('winlose');
 const winlose_pic = document.getElementById('winlose_pic');
@@ -11,9 +11,25 @@ var r3;
 
 var stavka;
 
+function open_casino() {
+    game_casino.style.width = "300px";
+    game_casino_close.style.width = "1920px";
+}
 
+function close_casino() {
+    game_casino.style.width = "0";
+    game_casino_close.style.width = "0";
+    music.src = "files/audio/delete.mp3";
+    audio.load();
+    n1.textContent = "-";
+    n2.textContent = "-";
+    n3.textContent = "-";
+    winlose.textContent = "";
+    winlose_pic.src = "files/gif/base.gif";
+    winlose_pic.style.height = "150px";
+}
 
-function kazich() {
+function casino_play() {
     stavka = Number(document.getElementById('stavki').value);
     winlose.textContent = "";
     switch (true) {
@@ -44,13 +60,13 @@ function kazich() {
 function kzpicks() {
 
     //кристал номер 1
-    c1.innerHTML = '<img class="gems" src="files/pic/gems/' + r1 + '.png">';
+    n1.innerHTML = '<img class="gems" src="files/pic/gems/' + r1 + '.png">';
 
     //кристал номер 2
-    c2.innerHTML = '<img class="gems" src="files/pic/gems/' + r2 + '.png">';
+    n2.innerHTML = '<img class="gems" src="files/pic/gems/' + r2 + '.png">';
 
     //кристал номер 3
-    c3.innerHTML = '<img class="gems" src="files/pic/gems/' + r3 + '.png">';
+    n3.innerHTML = '<img class="gems" src="files/pic/gems/' + r3 + '.png">';
 
     kzcheck();
 }

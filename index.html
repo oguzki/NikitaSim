@@ -17,80 +17,78 @@
 	<audio id="audio" autoplay>
 		<source src="" id="music">
 	</audio>
-	<div id="mainmenu" class="menu">
-		<div
-			style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%; background-color: #212121;">
-			<h2 style="color: white; font-family: ubuntu;">NikitaSim 2.2.2 (beta)</h2>
-			<button class="bb" onclick="start()" autofocus id="lang_menu1">начать</button>
-			<div style="margin: 10px; text-align: center;">
-				<h3 id="lang_menu2">или введите пароль</h3>
-				<input id="parol" size="30" style="text-align: center">
-				<button class="bb" onclick="resume()" id="lang_menu3">продолжить</button>
-			</div>
-			<h3 class="disc" id="lang_menu4">данная игра является шуточной и не имеет ничего общего с реальностью (кроме
-				Никиты)</h3>
-			<h3 class="disc"><a class="disclink" href="https://github.com/oguzki" target="_blank">огузки
-					corp.</a>, 2023
-			</h3>
-			<div>
-				<h4 class="disc" id="lang_menu5">вы представитель прессы? опробуйте <a class="disclink"
-						href="https://oguzki.github.io/NikitaSim/press" target="_blank">press release</a></h4>
-			</div>
+
+
+
+	<div id="mainmenu">
+		<h2 class="gamename">NikitaSim 3.0 (beta)</h2>
+		<button class="mainmenu-button" onclick="start()">начать</button>
+		<div style="text-align: center;">
+			<h3>или введите пароль</h3>
+			<input id="parol" size="30" style="text-align: center">
+			<button class="mainmenu-button" onclick="resume()">продолжить</button>
 		</div>
+		<h3 class="mainmenu-disc">данная игра является шуточной и не имеет ничего общего с
+			реальностью (кроме
+			Никиты)</h3>
+		<h3 class="mainmenu-disc"><a class="mainmenu-disclink" href="https://github.com/oguzki" target="_blank">огузки
+				corp.</a>, 2023
+		</h3>
 	</div>
+
+
+
 	<div id="randomobj" class="randomobj">
-		<div id="randomsod"
-			style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%;">
-			<h3 id="lang_game1">вау, это же случайное событие</h3>
-			<div style="margin: 30px; text-align: center;">
-				<h2 id="rname">test</h2>
-			</div>
-			<div style="display: flex; justify-content: center;">
-				<button id="rchoice1" class="choicebutton" onclick="choice1()">1</button>
-				<button id="rchoice2" class="choicebutton" onclick="choice2()">2</button>
-			</div>
+		<h3>вау, это же случайное событие</h3>
+		<div style="margin: 30px; text-align: center;">
+			<h2 id="rname">test</h2>
+		</div>
+		<div style="display: flex; justify-content: center;">
+			<button id="rchoice1" class="choicebutton" onclick="choice1()">1</button>
+			<button id="rchoice2" class="choicebutton" onclick="choice2()">2</button>
 		</div>
 	</div>
+
 
 	<div id="posle" class="randomobj">
-		<div id="randomsod"
-			style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%;">
-			<h3 id="spname">test</h3>
-			<div style="margin: 30px; text-align: center;">
-				<h2 id="pname">test</h2>
-			</div>
-			<div style="display: flex; justify-content: center;">
-				<button id="ballzb" class="choicebutton" onclick="ballz()">ок</button>
-			</div>
+		<h3 id="spname">test</h3>
+		<div style="margin: 30px; text-align: center;">
+			<h2 id="pname">test</h2>
+		</div>
+		<div style="display: flex; justify-content: center;">
+			<button id="ballzb" class="choicebutton" onclick="ballz()">ок</button>
 		</div>
 	</div>
 
-	<div class="menu2" id="kaz">
+
+	<div id="game-casino">
 		<div style="display: flex; justify-content: center; margin-top: 30px;">
-			<h2 class="k" id="chislo1">-</h2>
-			<h2 class="k" id="chislo2">-</h2>
-			<h2 class="k" id="chislo3">-</h2>
+			<h2 class="k" id="casino_number1">-</h2>
+			<h2 class="k" id="casino_number2">-</h2>
+			<h2 class="k" id="casino_number3">-</h2>
 		</div>
-		<h3 onclick="kazich()"
+		<h3 onclick="casino_play()"
 			style="background-color: green; margin: 30px; cursor: pointer; user-select: none; text-align: center; color: white">
 			сыграть</h3>
 		<div style="margin: 30px; text-align: center;">
 			<input id="stavki" type="number" size="20" style="text-align: center">
 		</div>
 		<div style="text-align: center;">
-			<img id="winlose_pic" src="" style="width: 150px; height: 150px;">
+			<img id="winlose_pic" src="files/gif/base.gif" style="width: 150px; height: 150px;">
 			<h1 id="winlose" style="background-color: white; margin: 30px;"></h1>
 		</div>
 	</div>
-	<div class="menu3" id="kaz1" onclick="closeKaz()"></div>
+	<div id="game-casino-close" onclick="close_casino()"></div>
+
 
 	<header style="display: flex; justify-content: space-between; background-color: #424242;">
-		<h3>деньги: <mark id="dengi"></mark></h3>
-		<h3>здоровье: <mark id="zdorovie"></mark></h3>
-		<h3>дата: <mark id="dayD">0</mark>.<mark id="monD">0</mark>.<mark id="yearD">0</mark></h3>
+		<h3>деньги: <mark id="money_game"></mark></h3>
+		<h3>здоровье: <mark id="hp_game"></mark></h3>
+		<h3>дата: <mark id="day_game">0</mark>.<mark id="mon_game">0</mark>.<mark id="year_game">0</mark></h3>
 	</header>
+
 	<header style="display: flex; justify-content: space-between; background-color: #424242;">
-		<button class="menubutton" onclick="cazik()">казино</button>
+		<button class="menubutton" onclick="open_casino()">казино</button>
 		<button class="menubutton" onclick="nextDay()">некст день</button>
 	</header>
 	<header style="display: flex; justify-content: space-between; background-color: #424242; padding-top: 5px;">
@@ -100,6 +98,7 @@
 	<header style="text-align: center; background-color: #424242;">
 		<button class="menubutton" onclick="generate()" style="margin: 5px 0px;">сохраниться</button>
 	</header>
+
 	<div style="text-align: center; margin-top: 10px;">
 		<div id="menu_prikol">
 			<img src="files/pic/samara/1.jpg" id="menu_image" style="max-width: 70%">
@@ -108,11 +107,10 @@
 </body>
 
 <script src="script/password.js"></script>
-<script src="script/time.js"></script>
 <script src="script/random.js"></script>
-<script src="script/kz.js"></script>
-<script src="script/localization.js"></script>
-<script src="script/prikoli.js"></script>
+<script src="script/casino.js"></script>
+<script src="script/game.js"></script>
+<script src="script/menu.js"></script>
 
 <script>
 
@@ -124,8 +122,8 @@
 
 	const mainmenu = document.getElementById('mainmenu');
 	const showcode = document.getElementById('showcode');
-	const kaz = document.getElementById('kaz');
-	const kaz1 = document.getElementById('kaz1')
+	const game_casino = document.getElementById('game-casino');
+	const game_casino_close = document.getElementById('game-casino-close')
 	const randomobj = document.getElementById('randomobj');
 	const posle = document.getElementById('posle');
 	const ballzb = document.getElementById('ballzb');
@@ -182,26 +180,11 @@
 		}
 	}
 
-	function closeKaz() {
-		kaz.style.width = "0";
-		kaz1.style.width = "0";
-		music.src = "files/audio/delete.mp3";
-		audio.load();
-		c1.textContent = "-";
-		c2.textContent = "-";
-		c3.textContent = "-";
-	}
-
 	function closeMenu() {
-		mainmenu.style.zIndex = "-1";
-		mainmenu.style.opacity = "0";
 		randomobj.style.zIndex = "-1";
 		randomobj.style.opacity = "0";
 		posle.style.zIndex = "-1";
 		posle.style.opacity = "0";
-		winlose.textContent = "";
-		winlose_pic.src = "files/gif/base.gif";
-		winlose_pic.style.height = "150px";
 		music.src = "";
 		audio.load();
 	}
@@ -211,11 +194,6 @@
 		randomobj.style.opacity = "0";
 		posle.style.zIndex = "4";
 		posle.style.opacity = "1";
-	}
-
-	function cazik() {
-		kaz.style.width = "300px";
-		kaz1.style.width = "1920px";
 	}
 
 	function stp() {
