@@ -79,6 +79,8 @@ function drink() {
     video.src = "files/video/hryap.mp4";
     video_name.textContent = "В честь праздника можно и выпить";
     drink_button.disabled = true;
+    money = money - 20;
+    moneychange();
 }
 
 function closeEvent() {
