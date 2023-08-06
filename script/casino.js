@@ -2,7 +2,7 @@ var n1 = document.getElementById('casino_number1');
 var n2 = document.getElementById('casino_number2');
 var n3 = document.getElementById('casino_number3');
 
-const winlose = document.getElementById('winlose');
+const game_casino_winlose = document.getElementById('game_casino_winlose');
 const winlose_pic = document.getElementById('winlose_pic');
 
 var r1;
@@ -24,7 +24,7 @@ function close_casino() {
     n1.textContent = "-";
     n2.textContent = "-";
     n3.textContent = "-";
-    winlose.textContent = "";
+    game_casino_winlose.textContent = "";
     winlose_pic.src = "files/gif/base.gif";
     winlose_pic.style.height = "150px";
 }
