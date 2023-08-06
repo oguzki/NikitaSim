@@ -1,15 +1,15 @@
-const menu_image = document.getElementById('menu_image');
+const game_image = document.getElementById('game_image');
 
 function holidays() {
     var prik = Math.floor(Math.random() * 2);
     switch (prik) {
         case 0:
             var roflan = Math.floor(Math.random() * 5) + 1;
-            menu_image.src = "files/pic/samara/" + roflan + ".jpg";
+            game_image.src = "files/pic/samara/" + roflan + ".jpg";
             break;
         case 1:
             var prikolsi = Math.floor(Math.random() * 23) + 1;
-            menu_image.src = "files/pic/days/" + prikolsi + ".jpg";
+            game_image.src = "files/pic/days/" + prikolsi + ".jpg";
             break;
     }
 }

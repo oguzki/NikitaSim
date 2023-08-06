@@ -5,6 +5,10 @@
     outline: 0;
 }
 
+body {
+    background-color: #212121;
+}
+
 h3 {
     font-family: ubuntu;
     color: white;
@@ -86,7 +90,7 @@ h2 {
     background-color: rgba(255, 0, 0, 0.205);
 }
 
-.choicebutton {
+.game-choice-button {
     font-family: ubuntu;
     padding: 5px;
     border: 1px solid black;
@@ -95,7 +99,7 @@ h2 {
     cursor: pointer;
 }
 
-.choicebutton:hover {
+.game-choice-button:hover {
     filter: invert(1);
 }
 
