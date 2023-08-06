@@ -33,7 +33,7 @@ function choice3() {
         video_event.style.opacity = "1";
         video.src = "files/video/badend.mp4";
         video_name.textContent = "Bad End";
-        drink_button.style.display = "none";
+        video_button.style.display = "none";
     } else {
         closeEvent();
     }

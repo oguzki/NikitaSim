@@ -166,7 +166,7 @@ function randomevent() {
 			video_event.style.opacity = "1";
 			video.src = "files/video/theend.mp4";
 			video_name.textContent = "Happy End";
-            drink_button.disabled = true;
+            video_button.style.display = "none";
             break;
         case health <= 1:
             event2.style.zIndex = "4";
