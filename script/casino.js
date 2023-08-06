@@ -19,7 +19,7 @@ function open_casino() {
 function close_casino() {
     game_casino.style.width = "0";
     game_casino_close.style.width = "0";
-    music.src = "files/audio/delete.mp3";
+    audio.src = "files/audio/delete.mp3";
     audio.load();
     n1.textContent = "-";
     n2.textContent = "-";

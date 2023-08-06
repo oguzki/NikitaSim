@@ -15,9 +15,7 @@
 </style>
 
 <body>
-	<audio id="audio" autoplay>
-		<source src="" id="music">
-	</audio>
+	<audio id="audio" src="" autoplay></audio>
 
 
 
@@ -39,30 +37,36 @@
 
 
 
-	<div id="randomobj" class="randomobj">
+	<div id="event1" class="game-events">
 		<h3>вау, это же случайное событие</h3>
 		<div style="margin: 30px; text-align: center;">
-			<h2 id="rname">test</h2>
+			<h2 id="event1_name">-</h2>
 		</div>
 		<div style="display: flex; justify-content: center;">
-			<button id="rchoice1" class="game-choice-button" onclick="choice1()">1</button>
-			<button id="rchoice2" class="game-choice-button" onclick="choice2()">2</button>
+			<button id="event1_button1" class="game-choice-button" onclick="choice1()">-</button>
+			<button id="event1_button2" class="game-choice-button" onclick="choice2()">-</button>
 		</div>
 	</div>
 
 
-	<div id="posle" class="randomobj">
-		<h3 id="spname">test</h3>
+	<div id="event2" class="game-events">
+		<h3 id="event2_main">-</h3>
 		<div style="margin: 30px; text-align: center;">
-			<h2 id="pname">test</h2>
+			<h2 id="event2_name">-</h2>
 		</div>
 		<div style="display: flex; justify-content: center;">
-			<button id="ballzb" class="game-choice-button" onclick="ballz()">ок</button>
+			<button id="event2_button" class="game-choice-button" onclick="choice3()">ок</button>
 		</div>
 	</div>
 
+	<div id="video_event" class="game-events">
+		<h3 id="video_name" style="margin-bottom: 5px;">-</h3>
+		<video id="video" src="" autoplay style="max-width: 70%"></video>
+		<button id="event2_button" class="game-choice-button" onclick="choice3()" style="margin-top: 5px;">ок</button>
+	</div>
 
-	<div id="game-casino">
+
+	<div id="game_casino">
 		<div style="display: flex; justify-content: center; margin-top: 30px;">
 			<h2 class="k" id="casino_number1">-</h2>
 			<h2 class="k" id="casino_number2">-</h2>
@@ -76,25 +80,26 @@
 		</div>
 		<div style="text-align: center;">
 			<img id="winlose_pic" src="files/gif/base.gif" style="width: 150px; height: 150px;">
-			<h1 id="winlose" style="background-color: white; margin: 30px;"></h1>
+			<h1 id="game_casino_winlose" style="background-color: white; margin: 30px;"></h1>
 		</div>
 	</div>
-	<div id="game-casino-close" onclick="close_casino()"></div>
+	<div id="game_casino_close" onclick="close_casino()"></div>
 
 
-	<header style="display: flex; justify-content: space-between; background-color: #424242;">
+	<header class="game-menu">
 		<h3>деньги: <mark id="money_game"></mark></h3>
 		<h3>здоровье: <mark id="hp_game"></mark></h3>
 		<h3>дата: <mark id="day_game">0</mark>.<mark id="mon_game">0</mark>.<mark id="year_game">0</mark></h3>
 	</header>
 
-	<header style="display: flex; justify-content: space-between; background-color: #424242;">
+	<header class="game-menu">
 		<button class="game-button" onclick="open_casino()">казино</button>
 		<button class="game-button" onclick="nextDay()">некст день</button>
 	</header>
-	<header style="display: flex; justify-content: space-between; background-color: #424242; padding-top: 5px;">
-		<button class="game-button" onclick="heal()">лечиться</button>
-		<button class="game-button" onclick="mama()" id="mother">звонок маме</button>
+	<header class="game-menu" style="padding-top: 5px;">
+		<button class="game-button" onclick="hospital()">лечиться</button>
+		<button class="game-button" onclick="drink()" id="drink_button" style="display: none;">хряпнуть</button>
+		<button class="game-button" onclick="call_mother()" id="call_mother_button">звонок маме</button>
 	</header>
 	<header style="text-align: center; background-color: #424242;">
 		<button class="game-button" onclick="generate()" style="margin: 5px 0px;">сохраниться</button>
@@ -121,97 +126,6 @@
 	var money = 0;
 	var health = 0;
 
-	const mainmenu = document.getElementById('mainmenu');
-	const showcode = document.getElementById('showcode');
-	const game_casino = document.getElementById('game-casino');
-	const game_casino_close = document.getElementById('game-casino-close')
-	const randomobj = document.getElementById('randomobj');
-	const posle = document.getElementById('posle');
-	const ballzb = document.getElementById('ballzb');
-
-	function ballz() {
-		if (health <= 1) {
-			posle.style.zIndex = "-1";
-			posle.style.opacity = "0";
-			randomobj.style.zIndex = "4";
-			randomobj.style.opacity = "1";
-			openchoice();
-			document.getElementById('randomsod').innerHTML = '<video src="files/video/badend.mp4" autoplay style="max-width: 70%"></video>';
-		} else {
-			closeMenu();
-		}
-	}
-
-	function heal() {
-		switch (true) {
-			case health === 100:
-				posle.style.zIndex = "4";
-				posle.style.opacity = "1";
-				var suma = (100 - health) * 6;
-				spname.textContent = "Добро пожаловать в дурку";
-				pname.textContent = "Чел, ты полностью здоров...";
-				health = 100;
-				money = money - suma;
-				healthchange();
-				moneychange();
-				break;
-			case money <= 0:
-				posle.style.zIndex = "4";
-				posle.style.opacity = "1";
-				spname.textContent = "Добро пожаловать в дурку";
-				pname.textContent = "У вас нет денег";
-				break;
-			case health === 0:
-				posle.style.zIndex = "4";
-				posle.style.opacity = "1";
-				spname.textContent = "инсульт жопы";
-				pname.textContent = "Вы не успели добраться до больницы и умерли...";
-				ballzb.textContent = "принять судьбу"
-				break;
-			default:
-				posle.style.zIndex = "4";
-				posle.style.opacity = "1";
-				var suma = (100 - health) * 6;
-				spname.textContent = "Добро пожаловать в дурку";
-				pname.textContent = "Вы востановили здоровье. Стоимость лечения составила " + suma + " рублей.";
-				health = 100;
-				money = money - suma;
-				healthchange();
-				moneychange();
-		}
-	}
-
-	function closeMenu() {
-		randomobj.style.zIndex = "-1";
-		randomobj.style.opacity = "0";
-		posle.style.zIndex = "-1";
-		posle.style.opacity = "0";
-		music.src = "";
-		audio.load();
-	}
-
-	function changepole() {
-		randomobj.style.zIndex = "-1";
-		randomobj.style.opacity = "0";
-		posle.style.zIndex = "4";
-		posle.style.opacity = "1";
-	}
-
-	function stp() {
-		money = money + 800;
-		moneychange();
-	}
-
-	function mama() {
-		money = money + 1000;
-		moneychange();
-		document.getElementById('mother').disabled = true;
-		setTimeout(resetbutton, 120000);
-	}
-
-	function resetbutton() {
-		document.getElementById('mother').disabled = false;
-	}
 </script>
 
 </html>
