@@ -1,6 +1,6 @@
-const event1_name = document.getElementById('event1_name');
+const event1_subname = document.getElementById('event1_subname');
 const event2_name = document.getElementById('event2_name');
-const event2_main = document.getElementById('event2_main');
+const event2_subname = document.getElementById('event2_subname');
 const event1_button1 = document.getElementById('event1_button1');
 const event1_button2 = document.getElementById('event1_button2');
 const audio = document.getElementById('audio');
@@ -33,7 +33,7 @@ let trackindex = 0;
 var random;
 
 function udacha() {
-    event2_main.textContent = "Ваше благородие, Госпожа Удача...";
+    event2_subname.textContent = "Ваше благородие, Госпожа Удача...";
     audio.src = "files/audio/random.mp3";
     audio.load();
 }
@@ -42,7 +42,7 @@ function choice1() {
     switch (random) {
         case 1:
             changeEvent();
-            event2_main.textContent = "Озон терпел и нам велел";
+            event2_subname.textContent = "Озон терпел и нам велел";
             event2_name.textContent = "Вы решили затерпеть. Вы потеряли 10 единиц здоровья.";
             health = health - 10;
             healthchange();
@@ -57,13 +57,13 @@ function choice1() {
                 healthchange();
             } else {
                 changeEvent();
-                event2_main.textContent = "Счастливчик. Хотя, кто знает, что для тебя лучше...";
+                event2_subname.textContent = "Счастливчик. Хотя, кто знает, что для тебя лучше...";
                 event2_name.textContent = "В это раз всё прошло гладко.";
             }
             break;
         case 3:
             changeEvent();
-            event2_main.textContent = "Интернет не анонимен";
+            event2_subname.textContent = "Интернет не анонимен";
             event2_name.textContent = "Жители Зимбабве нашли вас (я сам хз как) и МЯГКО намекнули, что они тоже люди. Вы потеряли 10 единиц здоровья.";
             health = health - 10;
             healthchange();
@@ -73,13 +73,13 @@ function choice1() {
             if (podrandom === 0) {
                 changeEvent();
                 udacha();
-                event2_main.textContent = "кладмен мудак";
+                event2_subname.textContent = "кладмен мудак";
                 event2_name.textContent = "Оказалось, что данный прикол был заранее спланирован ФСБ. НО, добрые дяденьки отпустили Вас всего лишь за каких-то 300 рублей.";
                 money = money - 300;
                 moneychange();
             } else {
                 changeEvent();
-                event2_main.textContent = "спасибо кладмен";
+                event2_subname.textContent = "спасибо кладмен";
                 event2_name.textContent = "Вы успешно продали соль. Вы заработали 300 рублей.";
                 money = money + 300;
                 moneychange();
@@ -100,7 +100,7 @@ function choice2() {
                 healthchange();
             } else {
                 changeEvent();
-                event2_main.textContent = "Точно в цель";
+                event2_subname.textContent = "Точно в цель";
                 event2_name.textContent = "Вы успешно убили пчелу";
             }
             break;
@@ -116,7 +116,7 @@ function choice2() {
                 moneychange();
             } else {
                 changeEvent();
-                event2_main.textContent = "В гостях хорошо, а дома лучше.";
+                event2_subname.textContent = "В гостях хорошо, а дома лучше.";
                 event2_name.textContent = "Вы успешно добрались до дома.";
             }
             break;
@@ -124,7 +124,7 @@ function choice2() {
             var podrandom = Math.floor(Math.random() * 2);
             if (podrandom === 0) {
                 changeEvent();
-                event2_main.textContent = "Интернет не анонимен";
+                event2_subname.textContent = "Интернет не анонимен";
                 event2_name.textContent = "Жители Зимбабве нашли вас (я сам хз как) и поблагодарили Вас за ваш выбор. Они вручили Вам 150 рублей.";
                 money = money + 150;
                 moneychange();
@@ -140,12 +140,12 @@ function choice2() {
             var podrandom = Math.floor(Math.random() * 2);
             if (podrandom === 0) {
                 changeEvent();
-                event2_main.textContent = "реально соль";
+                event2_subname.textContent = "реально соль";
                 event2_name.textContent = "Вот Вы думали, что это та соль, но нет. Это оказалась столовая соль. С вами ничего не произошло.";
             } else {
                 changeEvent();
                 udacha();
-                event2_main.textContent = "давай раскумаримся по полной";
+                event2_subname.textContent = "давай раскумаримся по полной";
                 event2_name.textContent = "Вы захавали соль и вас, сделайте удивлённое лицо, накрыло. Вы проснулись на следующий день и потеряли 15 здоровья.";
                 health = health - 15;
                 healthchange();
@@ -168,37 +168,37 @@ function randomevent() {
 			video_name.textContent = "Happy End";
             video_button.style.display = "none";
             break;
-        case health <= 1:
+        case health <= 0:
             event2.style.zIndex = "4";
             event2.style.opacity = "1";
-            event2_main.textContent = "инсульт жопы";
+            event2_subname.textContent = "инсульт жопы";
             event2_name.textContent = "Вы не дожили до следующего дня...";
-            event2_button.textContent = "смэрть"
+            event2_button.textContent = "принять судьбу"
             break;
         default:
             random = Math.floor(Math.random() * 8) + 1;
             switch (random) {
                 case 1:
                     openchoice();
-                    event1_name.textContent = robj[trackindex = 0].name;
+                    event1_subname.textContent = robj[trackindex = 0].name;
                     event1_button1.textContent = robj[trackindex = 0].choice1;
                     event1_button2.textContent = robj[trackindex = 0].choice2;
                     break;
                 case 2:
                     openchoice();
-                    event1_name.textContent = robj[trackindex = 1].name;
+                    event1_subname.textContent = robj[trackindex = 1].name;
                     event1_button1.textContent = robj[trackindex = 1].choice1;
                     event1_button2.textContent = robj[trackindex = 1].choice2;
                     break;
                 case 3:
                     openchoice();
-                    event1_name.textContent = robj[trackindex = 2].name;
+                    event1_subname.textContent = robj[trackindex = 2].name;
                     event1_button1.textContent = robj[trackindex = 2].choice1;
                     event1_button2.textContent = robj[trackindex = 2].choice2;
                     break;
                 case 4:
                     openchoice();
-                    event1_name.textContent = robj[trackindex = 3].name;
+                    event1_subname.textContent = robj[trackindex = 3].name;
                     event1_button1.textContent = robj[trackindex = 3].choice1;
                     event1_button2.textContent = robj[trackindex = 3].choice2;
                     break;

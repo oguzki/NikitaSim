@@ -6,20 +6,21 @@ const event2 = document.getElementById('event2');
 const video = document.getElementById('video');
 const video_event = document.getElementById('video_event');
 const video_name = document.getElementById('video_name');
+const video_subname = document.getElementById('video_subname');
 const video_button = document.getElementById('video_button');
 const event2_button = document.getElementById('event2_button'); const game_image = document.getElementById('game_image');
 
 function holidays() {
-    var prik = Math.floor(Math.random() * 2);
-    switch (prik) {
+    var game_pics = Math.floor(Math.random() * 2);
+    switch (game_pics) {
         case 0:
-            var roflan = Math.floor(Math.random() * 5) + 1;
-            game_image.src = "files/pic/samara/" + roflan + ".jpg";
+            var samara = Math.floor(Math.random() * 5) + 1;
+            game_image.src = "files/pic/samara/" + samara + ".jpg";
             drink_button.disabled = true;
             break;
         case 1:
-            var prikolsi = Math.floor(Math.random() * 23) + 1;
-            game_image.src = "files/pic/days/" + prikolsi + ".jpg";
+            var holiday = Math.floor(Math.random() * 23) + 1;
+            game_image.src = "files/pic/days/" + holiday + ".jpg";
             drink_button.disabled = false;
             break;
     }
@@ -44,19 +45,19 @@ function hospital() {
         case health === 100:
             event2.style.zIndex = "4";
             event2.style.opacity = "1";
-            event2_main.textContent = "Добро пожаловать в дурку";
+            event2_subname.textContent = "Добро пожаловать в дурку";
             event2_name.textContent = "Чел, ты полностью здоров...";
             break;
         case money <= 0:
             event2.style.zIndex = "4";
             event2.style.opacity = "1";
-            event2_main.textContent = "Добро пожаловать в дурку";
+            event2_subname.textContent = "Добро пожаловать в дурку";
             event2_name.textContent = "У вас нет денег";
             break;
-        case health === 0:
+        case health <= 0:
             event2.style.zIndex = "4";
             event2.style.opacity = "1";
-            event2_main.textContent = "инсульт жопы";
+            event2_subname.textContent = "инсульт жопы";
             event2_name.textContent = "Вы не успели добраться до больницы и умерли...";
             event2_button.textContent = "принять судьбу"
             break;
@@ -64,7 +65,7 @@ function hospital() {
             event2.style.zIndex = "4";
             event2.style.opacity = "1";
             var heal_cost = (100 - health) * 6;
-            event2_main.textContent = "Добро пожаловать в дурку";
+            event2_subname.textContent = "Добро пожаловать в дурку";
             event2_name.textContent = "Вы востановили здоровье. Стоимость лечения составила " + heal_cost + " рублей.";
             health = 100;
             money = money - heal_cost;
@@ -76,8 +77,19 @@ function hospital() {
 function drink() {
     video_event.style.zIndex = "4";
     video_event.style.opacity = "1";
-    video.src = "files/video/hryap.mp4";
-    video_name.textContent = "В честь праздника можно и выпить";
+    var drink_random = Math.floor(Math.random() * 2) + 1;
+    switch (drink_random) {
+        case 1:
+            video.src = "files/video/hryap.mp4";
+            video_name.textContent = "В честь праздника можно и выпить";
+            break;
+        case 2:
+            video.src = "files/video/ozon.mp4";
+            video_name.textContent = "В честь праздника можно и...";
+            health = health - 3;
+            healthchange();
+            break;
+    }
     drink_button.disabled = true;
     money = money - 20;
     moneychange();
