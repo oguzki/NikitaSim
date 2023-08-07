@@ -9,6 +9,11 @@ body {
     background-color: #212121;
 }
 
+h4 {
+    font-family: ubuntu;
+    color: white;
+}
+
 h3 {
     font-family: ubuntu;
     color: white;

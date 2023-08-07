@@ -82,11 +82,14 @@ function drink() {
         case 1:
             video.src = "files/video/hryap.mp4";
             video_name.textContent = "В честь праздника можно и выпить";
+            video_subname.textContent = "Вы потеряли 20 рублей, но восстановили 5 здоровья.";
             break;
         case 2:
+            var drink_boyarin = Math.floor(Math.random() * 4) + 2;
             video.src = "files/video/ozon.mp4";
             video_name.textContent = "В честь праздника можно и...";
-            health = health - 3;
+            video_subname.textContent = "Вы потеряли 20 рублей и " + drink_boyarin + " здоровья."
+            health = health - drink_boyarin;
             healthchange();
             break;
     }
