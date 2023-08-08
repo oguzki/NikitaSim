@@ -43,8 +43,8 @@ function choice1() {
         case 1:
             changeEvent();
             event2_subname.textContent = "Озон терпел и нам велел";
-            event2_name.textContent = "Вы решили затерпеть. Вы потеряли 10 единиц здоровья.";
-            health = health - 10;
+            event2_name.textContent = "Вы решили затерпеть. Вы потеряли 5 единиц здоровья.";
+            health = health - 5;
             healthchange();
             break;
         case 2:
@@ -52,8 +52,8 @@ function choice1() {
             if (podrandom === 0) {
                 udacha();
                 changeEvent();
-                event2_name.textContent = "Увы, но в этот раз у вас ничего не получилось. Все нелегальные предметы были конфискованы, а вы потеряли 5 единиц здоровья.";
-                health = health - 5;
+                event2_name.textContent = "Увы, но в этот раз у вас ничего не получилось. Все нелегальные предметы были конфискованы, а вы потеряли 2 единицы здоровья.";
+                health = health - 2;
                 healthchange();
             } else {
                 changeEvent();
@@ -95,8 +95,8 @@ function choice2() {
             if (podrandom === 0) {
                 udacha();
                 changeEvent();
-                event2_name.textContent = "Увы, но вы промахнулись. Пчела нанесла ответный удар. Вы потеряли 10 единиц здоровья";
-                health = health - 10;
+                event2_name.textContent = "Увы, но вы промахнулись. Пчела нанесла ответный удар. Вы потеряли 5 единиц здоровья";
+                health = health - 5;
                 healthchange();
             } else {
                 changeEvent();
@@ -109,8 +109,8 @@ function choice2() {
             if (podrandom === 0) {
                 udacha();
                 changeEvent();
-                event2_name.textContent = '"Зачем сидеть на парах" - подумали вы и отправились домой. Но по пути вы встретили куратора. Поздравляю, Вы снова в шараге. Вы потеряли 5 единиц здоровья и 30 рублей.';
-                health = health - 5;
+                event2_name.textContent = '"Зачем сидеть на парах" - подумали вы и отправились домой. Но по пути вы встретили куратора. Поздравляю, Вы снова в шараге. Вы потеряли 2 единицы здоровья и 30 рублей.';
+                health = health - 2;
                 money = money - 30;
                 healthchange();
                 moneychange();
@@ -146,9 +146,10 @@ function choice2() {
                 changeEvent();
                 udacha();
                 event2_subname.textContent = "давай раскумаримся по полной";
-                event2_name.textContent = "Вы захавали соль и вас, сделайте удивлённое лицо, накрыло. Вы проснулись на следующий день и потеряли 15 здоровья.";
-                health = health - 15;
+                event2_name.textContent = "Вы захавали соль и Вас, сделайте удивлённое лицо, накрыло. Вы проснулись на следующий день и потеряли 10 здоровья.";
+                health = health - 7;
                 healthchange();
+                nextDay_withoutEvent();
             }
             break;
     }

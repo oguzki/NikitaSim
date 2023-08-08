@@ -82,7 +82,14 @@ function drink() {
         case 1:
             video.src = "files/video/hryap.mp4";
             video_name.textContent = "В честь праздника можно и выпить";
-            video_subname.textContent = "Вы потеряли 20 рублей, но восстановили 5 здоровья.";
+            if (health < 100 && health > 0) {
+                video_subname.textContent = "Вы потеряли 20 рублей, но восстановили 5 единиц здоровья.";
+                var test_health = health + 5;
+                health = Math.floor(test_health / 100) * 100;
+                healthchange();
+            } else {
+                video_subname.textContent = "Вы потеряли 20 рублей, но нормально так кайфанули.";
+            }
             break;
         case 2:
             var drink_boyarin = Math.floor(Math.random() * 4) + 2;
@@ -138,6 +145,26 @@ function nextDay() {
     drink_button.style.display = "block";
     day = day + 1;
     randomevent();
+    holidays();
+    if (mon === 2) {
+        if (day === 29) {
+            nextMon();
+            scholarship();
+        }
+    }
+    if (day === 32) {
+        nextMon();
+        scholarship();
+    } else {
+        daychange();
+    }
+    if (mon >= 13) {
+        nextYear();
+    }
+}
+
+function nextDay_withoutEvent() {
+    day = day + 1;
     holidays();
     if (mon === 2) {
         if (day === 29) {
