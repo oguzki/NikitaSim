@@ -8,7 +8,9 @@ const video_event = document.getElementById('video_event');
 const video_name = document.getElementById('video_name');
 const video_subname = document.getElementById('video_subname');
 const video_button = document.getElementById('video_button');
-const event2_button = document.getElementById('event2_button'); const game_image = document.getElementById('game_image');
+const event2_button = document.getElementById('event2_button'); 
+
+const game_image = document.getElementById('game_image');
 
 function holidays() {
     var game_pics = Math.floor(Math.random() * 2);
@@ -27,13 +29,14 @@ function holidays() {
 }
 
 function choice3() {
-    if (health <= 1) {
+    if (health < 1) {
         event2.style.zIndex = "-1";
         event2.style.opacity = "0";
         video_event.style.zIndex = "4";
         video_event.style.opacity = "1";
         video.src = "files/video/badend.mp4";
         video_name.textContent = "Bad End";
+        video_subname.style.display = "none";
         video_button.style.display = "none";
     } else {
         closeEvent();
@@ -82,13 +85,18 @@ function drink() {
         case 1:
             video.src = "files/video/hryap.mp4";
             video_name.textContent = "В честь праздника можно и выпить";
-            if (health < 100 && health > 0) {
-                video_subname.textContent = "Вы потеряли 20 рублей, но восстановили 5 единиц здоровья.";
-                var test_health = health + 5;
-                health = Math.floor(test_health / 100) * 100;
+            if (health < 100 && health >= 95) {
+                video_subname.textContent = "Вы потеряли 20 рублей, но восстановили здоровье до максимума.";
+                health = 100;
                 healthchange();
             } else {
-                video_subname.textContent = "Вы потеряли 20 рублей, но нормально так кайфанули.";
+                if (health < 95 && health > 0) {
+                    video_subname.textContent = "Вы потеряли 20 рублей, но восстановили 5 единиц здоровья.";
+                    health = health + 5;
+                    healthchange();
+                } else {
+                    video_subname.textContent = "Вы потеряли 20 рублей, но нормально так кайфанули.";
+                }
             }
             break;
         case 2:
