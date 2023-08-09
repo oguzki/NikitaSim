@@ -33,7 +33,7 @@ let trackindex = 0;
 var random;
 
 function udacha() {
-    event2_subname.textContent = "Ваше благородие, Госпожа Удача...";
+    event2_name.textContent = "Ваше благородие, Госпожа Удача...";
     audio.src = "files/audio/random.mp3";
     audio.load();
 }
@@ -42,8 +42,8 @@ function choice1() {
     switch (random) {
         case 1:
             changeEvent();
-            event2_subname.textContent = "Озон терпел и нам велел";
-            event2_name.textContent = "Вы решили затерпеть. Вы потеряли 5 единиц здоровья.";
+            event2_name.textContent = "Озон терпел и нам велел";
+            event2_subname.textContent = "Вы решили затерпеть. Вы потеряли 5 единиц здоровья.";
             health = health - 5;
             healthchange();
             break;
@@ -52,19 +52,19 @@ function choice1() {
             if (podrandom === 0) {
                 udacha();
                 changeEvent();
-                event2_name.textContent = "Увы, но в этот раз у вас ничего не получилось. Все нелегальные предметы были конфискованы, а вы потеряли 2 единицы здоровья.";
+                event2_subname.textContent = "Увы, но в этот раз у вас ничего не получилось. Все нелегальные предметы были конфискованы, а вы потеряли 2 единицы здоровья.";
                 health = health - 2;
                 healthchange();
             } else {
                 changeEvent();
-                event2_subname.textContent = "Счастливчик. Хотя, кто знает, что для тебя лучше...";
-                event2_name.textContent = "В это раз всё прошло гладко.";
+                event2_name.textContent = "Счастливчик. Хотя, кто знает, что для тебя лучше...";
+                event2_subname.textContent = "В это раз всё прошло гладко.";
             }
             break;
         case 3:
             changeEvent();
-            event2_subname.textContent = "Интернет не анонимен";
-            event2_name.textContent = "Жители Зимбабве нашли вас (я сам хз как) и МЯГКО намекнули, что они тоже люди. Вы потеряли 10 единиц здоровья.";
+            event2_name.textContent = "Интернет не анонимен";
+            event2_subname.textContent = "Жители Зимбабве нашли вас (я сам хз как) и МЯГКО намекнули, что они тоже люди. Вы потеряли 10 единиц здоровья.";
             health = health - 10;
             healthchange();
             break;
@@ -73,14 +73,14 @@ function choice1() {
             if (podrandom === 0) {
                 changeEvent();
                 udacha();
-                event2_subname.textContent = "кладмен мудак";
-                event2_name.textContent = "Оказалось, что данный прикол был заранее спланирован ФСБ. НО, добрые дяденьки отпустили Вас всего лишь за каких-то 300 рублей.";
+                event2_name.textContent = "кладмен мудак";
+                event2_subname.textContent = "Оказалось, что данный прикол был заранее спланирован ФСБ. НО, добрые дяденьки отпустили Вас всего лишь за каких-то 300 рублей.";
                 money = money - 300;
                 moneychange();
             } else {
                 changeEvent();
-                event2_subname.textContent = "спасибо кладмен";
-                event2_name.textContent = "Вы успешно продали соль. Вы заработали 300 рублей.";
+                event2_name.textContent = "спасибо кладмен";
+                event2_subname.textContent = "Вы успешно продали соль. Вы заработали 300 рублей.";
                 money = money + 300;
                 moneychange();
             }
@@ -95,13 +95,13 @@ function choice2() {
             if (podrandom === 0) {
                 udacha();
                 changeEvent();
-                event2_name.textContent = "Увы, но вы промахнулись. Пчела нанесла ответный удар. Вы потеряли 5 единиц здоровья";
+                event2_subname.textContent = "Увы, но вы промахнулись. Пчела нанесла ответный удар. Вы потеряли 5 единиц здоровья";
                 health = health - 5;
                 healthchange();
             } else {
                 changeEvent();
-                event2_subname.textContent = "Точно в цель";
-                event2_name.textContent = "Вы успешно убили пчелу";
+                event2_name.textContent = "Точно в цель";
+                event2_subname.textContent = "Вы успешно убили пчелу";
             }
             break;
         case 2:
@@ -109,29 +109,29 @@ function choice2() {
             if (podrandom === 0) {
                 udacha();
                 changeEvent();
-                event2_name.textContent = '"Зачем сидеть на парах" - подумали вы и отправились домой. Но по пути вы встретили куратора. Поздравляю, Вы снова в шараге. Вы потеряли 2 единицы здоровья и 30 рублей.';
+                event2_subname.textContent = '"Зачем сидеть на парах" - подумали вы и отправились домой. Но по пути вы встретили куратора. Поздравляю, Вы снова в шараге. Вы потеряли 2 единицы здоровья и 30 рублей.';
                 health = health - 2;
                 money = money - 30;
                 healthchange();
                 moneychange();
             } else {
                 changeEvent();
-                event2_subname.textContent = "В гостях хорошо, а дома лучше.";
-                event2_name.textContent = "Вы успешно добрались до дома.";
+                event2_name.textContent = "В гостях хорошо, а дома лучше.";
+                event2_subname.textContent = "Вы успешно добрались до дома.";
             }
             break;
         case 3:
             var podrandom = Math.floor(Math.random() * 2);
             if (podrandom === 0) {
                 changeEvent();
-                event2_subname.textContent = "Интернет не анонимен";
-                event2_name.textContent = "Жители Зимбабве нашли вас (я сам хз как) и поблагодарили Вас за ваш выбор. Они вручили Вам 150 рублей.";
+                event2_name.textContent = "Интернет не анонимен";
+                event2_subname.textContent = "Жители Зимбабве нашли вас (я сам хз как) и поблагодарили Вас за ваш выбор. Они вручили Вам 150 рублей.";
                 money = money + 150;
                 moneychange();
             } else {
                 udacha();
                 changeEvent();
-                event2_name.textContent = "Хейтеры Зимбабве нашли вас и МЯГКО намекнули, что Вы сделали плохой выбор. Вы потерял 10 единиц здоровья.";
+                event2_subname.textContent = "Хейтеры Зимбабве нашли вас и МЯГКО намекнули, что Вы сделали плохой выбор. Вы потерял 10 единиц здоровья.";
                 health = health - 10;
                 healthchange();
             }
@@ -140,13 +140,13 @@ function choice2() {
             var podrandom = Math.floor(Math.random() * 2);
             if (podrandom === 0) {
                 changeEvent();
-                event2_subname.textContent = "реально соль";
-                event2_name.textContent = "Вот Вы думали, что это та соль, но нет. Это оказалась столовая соль. С вами ничего не произошло.";
+                event2_name.textContent = "реально соль";
+                event2_subname.textContent = "Вот Вы думали, что это та соль, но нет. Это оказалась столовая соль. С вами ничего не произошло.";
             } else {
                 changeEvent();
                 udacha();
-                event2_subname.textContent = "давай раскумаримся по полной";
-                event2_name.textContent = "Вы захавали соль и Вас, сделайте удивлённое лицо, накрыло. Вы проснулись на следующий день и потеряли 10 здоровья.";
+                event2_name.textContent = "давай раскумаримся по полной";
+                event2_subname.textContent = "Вы захавали соль и Вас, сделайте удивлённое лицо, накрыло. Вы проснулись на следующий день и потеряли 10 здоровья.";
                 health = health - 7;
                 healthchange();
                 nextDay_withoutEvent();
@@ -172,8 +172,8 @@ function randomevent() {
         case health <= 0:
             event2.style.zIndex = "4";
             event2.style.opacity = "1";
-            event2_subname.textContent = "инсульт жопы";
-            event2_name.textContent = "Вы не дожили до следующего дня...";
+            event2_name.textContent = "инсульт жопы";
+            event2_subname.textContent = "Вы не дожили до следующего дня...";
             event2_button.textContent = "принять судьбу"
             break;
         default:

@@ -45,28 +45,28 @@ function hospital() {
         case health === 100:
             event2.style.zIndex = "4";
             event2.style.opacity = "1";
-            event2_subname.textContent = "Добро пожаловать в дурку";
-            event2_name.textContent = "Чел, ты полностью здоров...";
+            event2_name.textContent = "Добро пожаловать в дурку";
+            event2_subname.textContent = "Чел, ты полностью здоров...";
             break;
         case money <= 0:
             event2.style.zIndex = "4";
             event2.style.opacity = "1";
-            event2_subname.textContent = "Добро пожаловать в дурку";
-            event2_name.textContent = "У вас нет денег";
+            event2_name.textContent = "Добро пожаловать в дурку";
+            event2_subname.textContent = "У вас нет денег";
             break;
         case health <= 0:
             event2.style.zIndex = "4";
             event2.style.opacity = "1";
-            event2_subname.textContent = "инсульт жопы";
-            event2_name.textContent = "Вы не успели добраться до больницы и умерли...";
+            event2_name.textContent = "инсульт жопы";
+            event2_subname.textContent = "Вы не успели добраться до больницы и умерли...";
             event2_button.textContent = "принять судьбу"
             break;
         default:
             event2.style.zIndex = "4";
             event2.style.opacity = "1";
             var heal_cost = (100 - health) * 6;
-            event2_subname.textContent = "Добро пожаловать в дурку";
-            event2_name.textContent = "Вы востановили здоровье. Стоимость лечения составила " + heal_cost + " рублей.";
+            event2_name.textContent = "Добро пожаловать в дурку";
+            event2_subname.textContent = "Вы востановили здоровье. Стоимость лечения составила " + heal_cost + " рублей.";
             health = 100;
             money = money - heal_cost;
             healthchange();
