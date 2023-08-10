@@ -131,6 +131,7 @@ function choice2() {
             } else {
                 udacha();
                 changeEvent();
+                event2_name.textContent = "Интернет не анонимен";
                 event2_subname.textContent = "Хейтеры Зимбабве нашли вас и МЯГКО намекнули, что Вы сделали плохой выбор. Вы потерял 10 единиц здоровья.";
                 health = health - 10;
                 healthchange();
