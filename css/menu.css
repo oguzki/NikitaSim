@@ -49,4 +49,9 @@
     color: red;
     font-family: ubuntu;
     text-decoration: none;
+    transition: .5s;
+}
+
+.mainmenu-disclink:hover {
+    color: white;
 }
