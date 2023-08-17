@@ -89,7 +89,7 @@ function kzcheck() {
             break;
         case r1 === 3 && r2 === 3 && r3 === 3:
             game_casino_winlose.textContent = "Всем пиво за мой счёт!";
-            winlose_pic.src = "https://psv4.userapi.com/c235031/u470760053/docs/d9/415d440fea1b/ded_pyot_pivo.gif?extra=V00f-0PytKuGlQN-yQOCDc2NmKN4TAZBf8OenzbD70tzLY8jtcVnKcs3MgtEV5TxKWNvQsGSez8dD-tG8CAA_GfiXc3_Z0VErrKh5MjgYqQ7DugNwJkcpzCnODNxxXsMMw4YTQKcZ3kzXJyg3tpnvLQAMg";
+            winlose_pic.src = "https://media.tenor.com/I046lf0JnigAAAAd/deadp47-%D0%BF%D0%B8%D0%B2%D0%BE.gif";
             winlose_pic.style.height = "274px"
             money = money + (stavka * 3);
             moneychange();
