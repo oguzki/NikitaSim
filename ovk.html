@@ -12,10 +12,6 @@
 </head>
 
 <style>
-	h1 {
-		color: white;
-		font-family: ubuntu;
-	}
 </style>
 
 <body>
@@ -23,11 +19,115 @@
 
 
 	<div id="mainmenu">
-		<h1>NikitaSim Tulip для OpenVK находиться в разработке. Релиз состоиться 18.06.23</h1>
-		<h1 class="mainmenu-disc"><a class="mainmenu-disclink"
-				href="https://openvk.uk/rizobyte" target="_blank">rizobyte</a>
-		</h1>
+		<h1 class="gamename">NikitaSim</h1>
+		<button class="mainmenu-button" onclick="start()">начать</button>
+		<div style="text-align: center;">
+			<h3>или введите пароль</h3>
+			<input id="parol" size="30" style="text-align: center">
+			<button class="mainmenu-button" onclick="resume()">продолжить</button>
+		</div>
+		<h3 class="mainmenu-disc">данная игра является шуточной и не имеет ничего общего с
+			реальностью (кроме
+			Никиты)</h3>
+		<h3 class="mainmenu-disc"><a class="mainmenu-disclink" href="https://github.com/oguzki" target="_blank">огузки
+				corp.</a>, 2023</h3>
+		<h3>port by <a class="mainmenu-disclink" href="https://openvk.uk/rizobyte" target="_blank">rizobyte</a>
+		</h3>
+		<h6 class="mainmenu-disc" style="font-family: opensans; font-size: 12px;">v3.1 (Tulip) OVK Edition</h6>
+	</div>
+
+
+
+	<div id="event1" class="game-events">
+		<h3>вау, это же случайное событие</h3>
+		<div style="margin: 30px; text-align: center;">
+			<h2 id="event1_subname">-</h2>
+		</div>
+		<div style="display: flex; justify-content: center;">
+			<button id="event1_button1" class="game-choice-button" onclick="choice1()">-</button>
+			<button id="event1_button2" class="game-choice-button" onclick="choice2()">-</button>
+		</div>
+	</div>
+
+
+	<div id="event2" class="game-events">
+		<h3 id="event2_name">-</h3>
+		<div style="margin: 30px; text-align: center;">
+			<h2 id="event2_subname">-</h2>
+		</div>
+		<div style="display: flex; justify-content: center;">
+			<button id="event2_button" class="game-choice-button" onclick="choice3()">ок</button>
+		</div>
+	</div>
+
+	<div id="video_event" class="game-events">
+		<h3 id="video_name" style="margin-bottom: 5px;">-</h3>
+		<video id="video" src="" autoplay style="max-width: 70%"></video>
+		<h4 id="video_subname" style="margin: 5px 0px;">-</h4>
+		<button id="video_button" class="game-choice-button" onclick="choice3()" style="margin-top: 5px;">ок</button>
+	</div>
+
+
+	<div id="game_casino">
+		<div style="display: flex; justify-content: center; margin-top: 30px;">
+			<h2 class="k" id="casino_number1">-</h2>
+			<h2 class="k" id="casino_number2">-</h2>
+			<h2 class="k" id="casino_number3">-</h2>
+		</div>
+		<h3 onclick="casino_play()"
+			style="background-color: green; margin: 30px; cursor: pointer; user-select: none; text-align: center; color: white">
+			сыграть</h3>
+		<div style="margin: 30px; text-align: center;">
+			<input id="stavki" type="number" size="20" style="text-align: center">
+		</div>
+		<div style="text-align: center;">
+			<img id="winlose_pic" src="files/gif/base.gif" style="width: 150px; height: 150px;">
+			<h1 id="game_casino_winlose" style="background-color: white; margin: 30px;"></h1>
+		</div>
+	</div>
+	<div id="game_casino_close" onclick="close_casino()"></div>
+
+
+	<header class="game-menu">
+		<h3>деньги: <mark id="money_game"></mark></h3>
+		<h3>здоровье: <mark id="hp_game"></mark></h3>
+		<h3>дата: <mark id="day_game">0</mark>.<mark id="mon_game">0</mark>.<mark id="year_game">0</mark></h3>
+	</header>
+
+	<header class="game-menu">
+		<button class="game-button" onclick="open_casino()">казино</button>
+		<button class="game-button" onclick="nextDay()">некст день</button>
+	</header>
+	<header class="game-menu" style="padding-top: 5px;">
+		<button class="game-button" onclick="hospital()">лечиться</button>
+		<button class="game-button" onclick="drink()" id="drink_button" style="display: none;">хряпнуть</button>
+		<button class="game-button" onclick="callmother()" id="call_mother_button">звонок маме</button>
+	</header>
+	<header style="text-align: center; background-color: #424242;">
+		<button class="game-button" onclick="generate()" style="margin: 5px 0px;">сохраниться</button>
+	</header>
+
+	<div style="text-align: center; margin-top: 10px;">
+		<div id="game_bg">
+			<img src="files/pic/samara/1.jpg" id="game_image" style="max-width: 70%">
+		</div>
 	</div>
 </body>
+
+<script src="script/password.js"></script>
+<script src="script/ovk_events.js"></script>
+<script src="script/ovk_casino.js"></script>
+<script src="script/ovk_game.js"></script>
+<script src="script/menu.js"></script>
+
+<script>
+
+	var day = 0;
+	var mon = 0;
+	var year = 0;
+	var money = 0;
+	var health = 0;
+
+</script>
 
 </html>
