@@ -21,7 +21,7 @@ function holidays() {
             drink_button.disabled = true;
             break;
         case 1:
-            var holiday = Math.floor(Math.random() * 23) + 1;
+            var holiday = Math.floor(Math.random() * 22) + 1;
             game_image.src = "files/pic/days/" + holiday + ".jpg";
             drink_button.disabled = false;
             break;
