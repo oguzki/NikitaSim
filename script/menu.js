@@ -40,13 +40,41 @@ function resume() {
             year = 23;
             day = 1;
             mon = 1;
-            money = 1000;
+            money = 2000;
             healthchange();
             daychange();
             monchange();
             yearchange();
             moneychange();
             document.getElementById('game_bg').innerHTML = '<video src="files/video/necoarc-anekdot.mp4" controls autoplay style="max-width: 50%"></video>'
+            close_mainmenu();
+            break;
+        case "babai":
+            health = 100;
+            year = 23;
+            day = 1;
+            mon = 1;
+            money = 2000;
+            healthchange();
+            daychange();
+            monchange();
+            yearchange();
+            moneychange();
+            document.getElementById('game_bg').innerHTML = '<video src="files/video/babai.mp4" controls autoplay style="max-width: 50%"></video>'
+            close_mainmenu();
+            break;
+        case "tatarstan":
+            health = 100;
+            year = 23;
+            day = 1;
+            mon = 1;
+            money = 2000;
+            healthchange();
+            daychange();
+            monchange();
+            yearchange();
+            moneychange();
+            document.getElementById('game_bg').innerHTML = '<video src="files/video/tarakan.mp4" controls autoplay style="max-width: 50%"></video>'
             close_mainmenu();
             break;
         default:
