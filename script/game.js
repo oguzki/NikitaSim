@@ -1,6 +1,4 @@
 const showcode = document.getElementById('showcode');
-const game_casino = document.getElementById('game_casino');
-const game_casino_close = document.getElementById('game_casino_close')
 const event1 = document.getElementById('event1');
 const event2 = document.getElementById('event2');
 const video = document.getElementById('video');
@@ -17,12 +15,12 @@ function holidays() {
     switch (game_pics) {
         case 0:
             var samara = Math.floor(Math.random() * 5) + 1;
-            game_image.src = "files/pic/samara/" + samara + ".jpg";
+            game_image.src = "files/img/samara/" + samara + ".jpg";
             drink_button.disabled = true;
             break;
         case 1:
             var holiday = Math.floor(Math.random() * 22) + 1;
-            game_image.src = "files/pic/days/" + holiday + ".jpg";
+            game_image.src = "files/img/days/" + holiday + ".jpg";
             drink_button.disabled = false;
             break;
     }
