@@ -2,6 +2,10 @@ var n1 = document.getElementById('casino_number1');
 var n2 = document.getElementById('casino_number2');
 var n3 = document.getElementById('casino_number3');
 
+const game_casino = document.getElementById('game_casino');
+const game_casino_close = document.getElementById('game_casino_close');
+const game_casino_last_win = document.getElementById('game_casino_last_win');
+const game_casino_last_win_sum = document.getElementById('game_casino_last_win_sum');
 const game_casino_winlose = document.getElementById('game_casino_winlose');
 const winlose_pic = document.getElementById('winlose_pic');
 
@@ -14,6 +18,19 @@ var stavka;
 function open_casino() {
     game_casino.style.width = "300px";
     game_casino_close.style.width = "1920px";
+    last_win();
+}
+
+function last_win() {
+    var lw1 = Math.floor(Math.random() * 8) + 1;
+    var lw2 = Math.floor(Math.random() * 8) + 1;
+    var lw3 = Math.floor(Math.random() * 8) + 1;
+    var lw4 = Math.floor(Math.random() * 8) + 1;
+    var lw5 = Math.floor(Math.random() * 8) + 1;
+    var lw6 = Math.floor(Math.random() * 8) + 1;
+    game_casino_last_win.textContent = lw1 + "" + "" + lw2 + "**********" + lw3 + "" + lw4 + "" + lw5 + "" + lw6;
+    game_casino_last_win_sum.textContent = "+" + (Math.floor(Math.random() * 9999) + 1) + "₽";
+    setTimeout(last_win, 5000);
 }
 
 function close_casino() {
@@ -24,6 +41,8 @@ function close_casino() {
     n1.textContent = "-";
     n2.textContent = "-";
     n3.textContent = "-";
+    game_casino_last_win.textContent = "";
+    game_casino_last_win_sum.textContent = "";
     game_casino_winlose.textContent = "";
     winlose_pic.src = "files/gif/base.gif";
     winlose_pic.style.height = "150px";
@@ -60,13 +79,13 @@ function casino_play() {
 function kzpicks() {
 
     //кристал номер 1
-    n1.innerHTML = '<img class="gems" src="files/pic/gems/' + r1 + '.png">';
+    n1.innerHTML = '<img class="gems" src="files/img/gems/' + r1 + '.png">';
 
     //кристал номер 2
-    n2.innerHTML = '<img class="gems" src="files/pic/gems/' + r2 + '.png">';
+    n2.innerHTML = '<img class="gems" src="files/img/gems/' + r2 + '.png">';
 
     //кристал номер 3
-    n3.innerHTML = '<img class="gems" src="files/pic/gems/' + r3 + '.png">';
+    n3.innerHTML = '<img class="gems" src="files/img/gems/' + r3 + '.png">';
 
     kzcheck();
 }
