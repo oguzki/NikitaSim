@@ -77,6 +77,21 @@ function resume() {
             document.getElementById('game_bg').innerHTML = '<video src="files/video/tarakan.mp4" controls autoplay style="max-width: 50%"></video>'
             close_mainmenu();
             break;
+        case "lilium":
+            health = 100;
+            year = 6;
+            day = 6;
+            mon = 6;
+            money = 666;
+            document.body.style.backgroundColor = "#891e28";
+            healthchange();
+            daychange();
+            monchange();
+            yearchange();
+            moneychange();
+            document.getElementById('game_bg').innerHTML = '<video src="files/video/lilium.mp4" controls autoplay style="max-width: 60%"></video>'
+            close_mainmenu();
+            break;
         default:
             var a0 = Number(code.slice(0, 3));
             var a1 = Number(code.slice(4, 6));
