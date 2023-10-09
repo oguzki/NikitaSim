@@ -60,7 +60,7 @@ function resume() {
             monchange();
             yearchange();
             moneychange();
-            document.getElementById('game_bg').innerHTML = '<video src="files/video/babai.mp4" controls autoplay style="max-width: 50%"></video>'
+            document.getElementById('game_bg').innerHTML = '<video src="files/video/babai.mp4" controls autoplay style="max-width: 60%"></video>'
             close_mainmenu();
             break;
         case "tatarstan":
