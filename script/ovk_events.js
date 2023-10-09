@@ -25,6 +25,11 @@ const robj = [
         choice1: 'продать',
         choice2: 'захавать',
     },
+    {
+        name: 'опять утро. идти в шарагу желания нет. что предпримем?',
+        choice1: 'пойти в колледж',
+        choice2: 'хряпнуть',
+    },
 ];
 
 let trackindex = 0;
@@ -36,9 +41,9 @@ function udacha() {
 }
 
 function choice1() {
+    changeEvent();
     switch (random) {
         case 1:
-            changeEvent();
             event2_name.textContent = "Озон терпел и нам велел";
             event2_subname.textContent = "Вы решили затерпеть. Вы потеряли 5 единиц здоровья.";
             health = health - 5;
@@ -48,18 +53,15 @@ function choice1() {
             var podrandom = Math.floor(Math.random() * 2);
             if (podrandom === 0) {
                 udacha();
-                changeEvent();
                 event2_subname.textContent = "Увы, но в этот раз у вас ничего не получилось. Все нелегальные предметы были конфискованы, а вы потеряли 2 единицы здоровья.";
                 health = health - 2;
                 healthchange();
             } else {
-                changeEvent();
                 event2_name.textContent = "Счастливчик. Хотя, кто знает, что для тебя лучше...";
                 event2_subname.textContent = "В это раз всё прошло гладко.";
             }
             break;
         case 3:
-            changeEvent();
             event2_name.textContent = "Интернет не анонимен";
             event2_subname.textContent = "Жители Зимбабве нашли вас (я сам хз как) и МЯГКО намекнули, что они тоже люди. Вы потеряли 10 единиц здоровья.";
             health = health - 10;
@@ -68,35 +70,38 @@ function choice1() {
         case 4:
             var podrandom = Math.floor(Math.random() * 2);
             if (podrandom === 0) {
-                changeEvent();
                 udacha();
                 event2_name.textContent = "кладмен мудак";
                 event2_subname.textContent = "Оказалось, что данный прикол был заранее спланирован ФСБ. НО, добрые дяденьки отпустили Вас всего лишь за каких-то 300 рублей.";
                 money = money - 300;
                 moneychange();
             } else {
-                changeEvent();
                 event2_name.textContent = "спасибо кладмен";
                 event2_subname.textContent = "Вы успешно продали соль. Вы заработали 300 рублей.";
                 money = money + 300;
                 moneychange();
             }
             break;
+        case 5:
+            event2_name.textContent = "Озон терпел и нам велел";
+            event2_subname.textContent = "Вы решили пойти в колледж (зачем?). Вы потратили 30 рублей за проезд.";
+            money = money - 30;
+            moneychange();
+            break;
     }
 }
 
 function choice2() {
+    changeEvent();
     switch (random) {
         case 1:
             var podrandom = Math.floor(Math.random() * 2);
             if (podrandom === 0) {
                 udacha();
-                changeEvent();
                 event2_subname.textContent = "Увы, но вы промахнулись. Пчела нанесла ответный удар. Вы потеряли 5 единиц здоровья";
                 health = health - 5;
                 healthchange();
             } else {
-                changeEvent();
                 event2_name.textContent = "Точно в цель";
                 event2_subname.textContent = "Вы успешно убили пчелу";
             }
@@ -105,14 +110,12 @@ function choice2() {
             var podrandom = Math.floor(Math.random() * 2);
             if (podrandom === 0) {
                 udacha();
-                changeEvent();
                 event2_subname.textContent = '"Зачем сидеть на парах" - подумали вы и отправились домой. Но по пути вы встретили куратора. Поздравляю, Вы снова в шараге. Вы потеряли 2 единицы здоровья и 30 рублей.';
                 health = health - 2;
                 money = money - 30;
                 healthchange();
                 moneychange();
             } else {
-                changeEvent();
                 event2_name.textContent = "В гостях хорошо, а дома лучше.";
                 event2_subname.textContent = "Вы успешно добрались до дома.";
             }
@@ -120,14 +123,12 @@ function choice2() {
         case 3:
             var podrandom = Math.floor(Math.random() * 2);
             if (podrandom === 0) {
-                changeEvent();
                 event2_name.textContent = "Интернет не анонимен";
                 event2_subname.textContent = "Жители Зимбабве нашли вас (я сам хз как) и поблагодарили Вас за ваш выбор. Они вручили Вам 150 рублей.";
                 money = money + 150;
                 moneychange();
             } else {
                 udacha();
-                changeEvent();
                 event2_subname.textContent = "Хейтеры Зимбабве нашли вас и МЯГКО намекнули, что Вы сделали плохой выбор. Вы потерял 10 единиц здоровья.";
                 health = health - 10;
                 healthchange();
@@ -136,14 +137,26 @@ function choice2() {
         case 4:
             var podrandom = Math.floor(Math.random() * 2);
             if (podrandom === 0) {
-                changeEvent();
                 event2_name.textContent = "реально соль";
                 event2_subname.textContent = "Вот Вы думали, что это та соль, но нет. Это оказалась столовая соль. С вами ничего не произошло.";
             } else {
-                changeEvent();
                 udacha();
                 event2_name.textContent = "давай раскумаримся по полной";
                 event2_subname.textContent = "Вы захавали соль и Вас, сделайте удивлённое лицо, накрыло. Вы проснулись на следующий день и потеряли 10 здоровья.";
+                health = health - 7;
+                healthchange();
+                nextDay_withoutEvent();
+            }
+            break;
+        case 5:
+            var podrandom = Math.floor(Math.random() * 2);
+            if (podrandom === 0) {
+                closeEvent();
+                drink();
+                video_name.textContent = "давай раскумаримся по полной";
+            } else {
+                udacha();
+                event2_subname.textContent = "Мало того, что дома ничего нечего выпить, так ещё и куратор забил тревогу из-за вашего отсутствия. Вы потеряли 7 здоровья";
                 health = health - 7;
                 healthchange();
                 nextDay_withoutEvent();
@@ -161,9 +174,9 @@ function randomevent() {
     switch (true) {
         case money >= 100000:
             video_event.style.zIndex = "4";
-			video_event.style.opacity = "1";
-			video.src = "files/video/theend.mp4";
-			video_name.textContent = "Happy End";
+            video_event.style.opacity = "1";
+            video.src = "files/video/theend.mp4";
+            video_name.textContent = "Happy End";
             video_subname.style.display = "none";
             video_button.style.display = "none";
             break;
