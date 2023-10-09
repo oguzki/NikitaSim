@@ -58,13 +58,13 @@ function casino_play() {
 function kzpicks() {
 
     //кристал номер 1
-    n1.innerHTML = '<img class="gems" src="files/pic/gems/' + r1 + '.png">';
+    n1.innerHTML = '<img class="gems" src="files/img/gems/' + r1 + '.png">';
 
     //кристал номер 2
-    n2.innerHTML = '<img class="gems" src="files/pic/gems/' + r2 + '.png">';
+    n2.innerHTML = '<img class="gems" src="files/img/gems/' + r2 + '.png">';
 
     //кристал номер 3
-    n3.innerHTML = '<img class="gems" src="files/pic/gems/' + r3 + '.png">';
+    n3.innerHTML = '<img class="gems" src="files/img/gems/' + r3 + '.png">';
 
     kzcheck();
 }
