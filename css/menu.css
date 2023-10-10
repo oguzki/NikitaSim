@@ -40,6 +40,12 @@
     background-color: #424242;
 }
 
+#menu_wrong {
+    color: red;
+    display: none;
+    margin-bottom: 5px;
+}
+
 .mainmenu-disc {
     color: white;
     font-family: ubuntu;
