@@ -20,6 +20,12 @@ function start() {
     monchange();
     yearchange();
     close_mainmenu();
+    video_event.style.zIndex = "4";
+    video_event.style.opacity = "1";
+    video_name.textContent = "правила";
+    video.src = "files/video/720.mp4";
+    video_subname.style.display = "none";
+    video_button.textContent = "скип";
 }
 
 function resume() {
@@ -119,5 +125,5 @@ function resume() {
                 break;
         }
     }
-    
+
 }
