@@ -27,13 +27,14 @@
 			<input id="parol" size="30" style="text-align: center">
 			<button class="mainmenu-button" onclick="resume()">продолжить</button>
 		</div>
+		<h3 id="menu_wrong">-</h3>
 		<h3 class="mainmenu-disc">данная игра является шуточной и не имеет ничего общего с
 			реальностью (кроме
 			Никиты)</h3>
 		<h3 class="mainmenu-disc"><a class="mainmenu-disclink" href="https://github.com/oguzki" target="_blank">огузки
 				corp.</a>, 2023
 		</h3>
-		<h6 class="mainmenu-disc" style="font-family: opensans-light; font-size: 12px;">v4.1 (Anticlea)</h6>
+		<h6 class="mainmenu-disc" style="font-family: opensans-light; font-size: 12px;">v4.2 (Anticlea)</h6>
 	</div>
 
 
@@ -69,6 +70,9 @@
 
 
 	<div id="game_casino">
+		<div style="margin-top: 30px; text-align: center;">
+			<h3>баланс: <mark id="money_casino" style="color: white; background-color: #ffffff00;"></mark></h3>
+		</div>
 		<div style="display: flex; justify-content: center; margin-top: 30px;">
 			<h2 class="k" id="casino_number1">-</h2>
 			<h2 class="k" id="casino_number2">-</h2>
@@ -97,9 +101,9 @@
 
 
 	<header class="game-menu">
-		<h3>деньги: <mark id="money_game"></mark></h3>
-		<h3>здоровье: <mark id="hp_game"></mark></h3>
-		<h3>дата: <mark id="day_game">0</mark>.<mark id="mon_game">0</mark>.<mark id="year_game">0</mark></h3>
+		<h3>деньги: <mark class="game_hud" id="money_game"></mark></h3>
+		<h3>здоровье: <mark class="game_hud" id="hp_game"></mark></h3>
+		<h3>дата: <mark class="game_hud" id="day_game">0</mark>.<mark class="game_hud" id="mon_game">0</mark>.<mark class="game_hud" id="year_game">0</mark></h3>
 	</header>
 
 	<header class="game-menu">
