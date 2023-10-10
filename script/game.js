@@ -6,7 +6,7 @@ const video_event = document.getElementById('video_event');
 const video_name = document.getElementById('video_name');
 const video_subname = document.getElementById('video_subname');
 const video_button = document.getElementById('video_button');
-const event2_button = document.getElementById('event2_button'); 
+const event2_button = document.getElementById('event2_button');
 
 const game_image = document.getElementById('game_image');
 
@@ -148,24 +148,46 @@ function reset_call_mother() {
 }
 
 function nextDay() {
-    drink_button.style.display = "block";
-    day = day + 1;
-    randomevent();
-    holidays();
-    if (mon === 2) {
-        if (day === 29) {
-            nextMon();
-            scholarship();
-        }
-    }
-    if (day === 32) {
-        nextMon();
-        scholarship();
-    } else {
-        daychange();
-    }
-    if (mon >= 13) {
-        nextYear();
+    switch (code) {
+        case 'lilium':
+            day = day + 1;
+            if (mon === 2) {
+                if (day === 29) {
+                    nextMon();
+                    scholarship();
+                }
+            }
+            if (day === 32) {
+                nextMon();
+                scholarship();
+            } else {
+                daychange();
+            }
+            if (mon >= 13) {
+                nextYear();
+            }
+            break;
+        default:
+            drink_button.style.display = "block";
+            day = day + 1;
+            randomevent();
+            holidays();
+            if (mon === 2) {
+                if (day === 29) {
+                    nextMon();
+                    scholarship();
+                }
+            }
+            if (day === 32) {
+                nextMon();
+                scholarship();
+            } else {
+                daychange();
+            }
+            if (mon >= 13) {
+                nextYear();
+            }
+            break;
     }
 }
 
@@ -216,6 +238,7 @@ function yearchange() {
 
 function moneychange() {
     document.getElementById('money_game').textContent = money;
+    document.getElementById('money_casino').textContent = money;
 }
 
 function healthchange() {
