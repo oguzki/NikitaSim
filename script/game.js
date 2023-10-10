@@ -79,6 +79,8 @@ function drink() {
     video_event.style.zIndex = "4";
     video_event.style.opacity = "1";
     var drink_random = Math.floor(Math.random() * 2) + 1;
+    video_subname.style.display = "block";
+    video_button.textContent = "ок";
     switch (drink_random) {
         case 1:
             video.src = "files/video/hryap.mp4";
