@@ -51,6 +51,10 @@ h2 {
     cursor: default;
 }
 
+#event1 {
+    user-select: none;
+}
+
 .game-events {
     width: 100%;
     height: 100%;
