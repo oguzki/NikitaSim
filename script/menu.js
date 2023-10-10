@@ -79,10 +79,10 @@ function resume() {
             break;
         case "lilium":
             health = 100;
-            year = 6;
-            day = 6;
-            mon = 6;
-            money = 666;
+            year = 12;
+            day = 12;
+            mon = 7;
+            money = 333;
             document.body.style.backgroundColor = "#891e28";
             healthchange();
             daychange();
