@@ -8,6 +8,15 @@ function close_mainmenu() {
     mainmenu.style.opacity = "0";
 }
 
+function rules() {
+    video_event.style.zIndex = "4";
+    video_event.style.opacity = "1";
+    video_name.textContent = "правила";
+    video.src = "files/video/720.mp4";
+    video_subname.style.display = "none";
+    video_button.textContent = "скип";
+}
+
 function start() {
     day = 1;
     mon = 1;
@@ -20,12 +29,7 @@ function start() {
     monchange();
     yearchange();
     close_mainmenu();
-    video_event.style.zIndex = "4";
-    video_event.style.opacity = "1";
-    video_name.textContent = "правила";
-    video.src = "files/video/720.mp4";
-    video_subname.style.display = "none";
-    video_button.textContent = "скип";
+    rules();
 }
 
 function resume() {
@@ -59,7 +63,7 @@ function resume() {
                 monchange();
                 yearchange();
                 moneychange();
-                document.getElementById('game_bg').innerHTML = '<video src="files/video/necoarc-anekdot.mp4" controls autoplay style="max-width: 50%"></video>'
+                document.getElementById('game_bg').innerHTML = '<video src="files/video/necoarc-anekdot.mp4" controls autoplay loop style="max-width: 50%"></video>'
                 close_mainmenu();
                 break;
             case "babai":
@@ -73,7 +77,7 @@ function resume() {
                 monchange();
                 yearchange();
                 moneychange();
-                document.getElementById('game_bg').innerHTML = '<video src="files/video/babai.mp4" controls autoplay style="max-width: 60%"></video>'
+                document.getElementById('game_bg').innerHTML = '<video src="files/video/babai.mp4" controls autoplay loop style="max-width: 60%"></video>'
                 close_mainmenu();
                 break;
             case "tatarstan":
@@ -87,7 +91,7 @@ function resume() {
                 monchange();
                 yearchange();
                 moneychange();
-                document.getElementById('game_bg').innerHTML = '<video src="files/video/tarakan.mp4" controls autoplay style="max-width: 50%"></video>'
+                document.getElementById('game_bg').innerHTML = '<video src="files/video/tarakan.mp4" controls autoplay loop style="max-width: 50%"></video>'
                 close_mainmenu();
                 break;
             case "lilium":
