@@ -90,7 +90,7 @@ function resume() {
                 day = 12;
                 mon = 7;
                 money = 333;
-                document.body.style.backgroundColor = "#891e28";
+                document.body.style.backgroundColor = "#a1303f";
                 healthchange();
                 daychange();
                 monchange();
