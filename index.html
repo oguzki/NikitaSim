@@ -21,7 +21,7 @@
 
 	<div id="mainmenu">
 		<img src="files/img/nikita-sim-logo.png" style="max-width: 70%; background-color: #a1303f; border-radius: 25px;">
-		<button class="mainmenu-button" onclick="start()" style="font-size: 25px;">начать</button>
+		<button class="mainmenu-button" onclick="play()" style="font-size: 25px;">начать</button>
 		<div style="text-align: center;">
 			<h3>или введите пароль</h3>
 			<input id="parol" size="30" style="text-align: center">
@@ -34,7 +34,7 @@
 		<h3 class="mainmenu-disc"><a class="mainmenu-disclink" href="https://github.com/oguzki" target="_blank">огузки
 				corp.</a>, 2023
 		</h3>
-		<h6 class="mainmenu-disc" style="font-family: opensans-light; font-size: 12px;">v4.4 (Anticlea)</h6>
+		<h6 class="mainmenu-disc" style="font-family: opensans-light; font-size: 12px;">v4.5 (Anticlea)</h6>
 	</div>
 
 
@@ -63,7 +63,7 @@
 
 	<div id="video_event" class="game-events">
 		<h3 id="video_name" style="margin-bottom: 5px;">-</h3>
-		<video id="video" src="" autoplay style="max-width: 70%"></video>
+		<video id="video" src="" autoplay></video>
 		<h4 id="video_subname" style="margin: 5px 0px;">-</h4>
 		<button id="video_button" class="game-choice-button" onclick="choice3()" style="margin-top: 5px;">ок</button>
 	</div>
@@ -115,7 +115,7 @@
 		<button class="game-button" onclick="drink()" id="drink_button" style="display: none;">хряпнуть</button>
 		<button class="game-button" onclick="callmother()" id="call_mother_button">звонок маме</button>
 	</header>
-	<header style="text-align: center; background-color: #424242;">
+	<header class="game-menu-1">
 		<button class="game-button" onclick="generate()" style="margin: 5px 0px;">сохраниться</button>
 	</header>
 
