@@ -36,6 +36,18 @@ h2 {
     height: 40px;
 }
 
+@media screen and (orientation: landscape) {
+    #video {
+        max-width: 75%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    #video {
+        max-width: 90%;
+    }
+}
+
 .game-button {
     background-color: #424242;
     color: white;
@@ -127,6 +139,11 @@ h2 {
 .game-menu {
     display: flex;
     justify-content: space-between;
+    background-color: #424242;
+}
+
+.game-menu-1 {
+    text-align: center;
     background-color: #424242;
 }
 
