@@ -12,23 +12,27 @@ function rules() {
     video_event.style.zIndex = "4";
     video_event.style.opacity = "1";
     video_name.textContent = "правила";
-    video.src = "files/video/720.mp4";
+    video.src = "files/video/rules.mp4";
     video_subname.style.display = "none";
     video_button.textContent = "скип";
 }
 
 function start() {
-    day = 1;
-    mon = 1;
-    year = 23;
-    money = 1000;
-    health = 100;
     healthchange();
     moneychange();
     daychange();
     monchange();
     yearchange();
     close_mainmenu();
+}
+
+function play() {
+    day = 1;
+    mon = 1;
+    year = 23;
+    money = 1000;
+    health = 100;
+    start();
     rules();
 }
 
@@ -40,74 +44,63 @@ function resume() {
     } else {
         switch (code) {
             case "wow":
+            case "Wow":
                 health = 100;
                 year = 23;
                 day = 12;
                 mon = 12;
                 money = 100000;
-                healthchange();
-                daychange();
-                monchange();
-                yearchange();
-                moneychange();
-                close_mainmenu();
+                start();
                 break;
             case "necoarc":
+            case "Necoarc":
                 health = 100;
                 year = 23;
                 day = 1;
                 mon = 1;
                 money = 2000;
-                healthchange();
-                daychange();
-                monchange();
-                yearchange();
-                moneychange();
-                document.getElementById('game_bg').innerHTML = '<video src="files/video/necoarc-anekdot.mp4" controls autoplay loop style="max-width: 50%"></video>'
-                close_mainmenu();
+                start();
+                document.getElementById('game_bg').innerHTML = '<video src="files/video/necoarc-anekdot.mp4" controls autoplay loop style="max-width: 57%"></video>'
                 break;
             case "babai":
+            case "Babai":
                 health = 100;
                 year = 23;
                 day = 1;
                 mon = 1;
                 money = 2000;
-                healthchange();
-                daychange();
-                monchange();
-                yearchange();
-                moneychange();
-                document.getElementById('game_bg').innerHTML = '<video src="files/video/babai.mp4" controls autoplay loop style="max-width: 60%"></video>'
-                close_mainmenu();
+                start();
+                document.getElementById('game_bg').innerHTML = '<video src="files/video/babai.mp4" controls autoplay loop style="max-width: 90%"></video>'
                 break;
             case "tatarstan":
+            case "Tatarstan":
                 health = 100;
                 year = 23;
                 day = 1;
                 mon = 1;
                 money = 2000;
-                healthchange();
-                daychange();
-                monchange();
-                yearchange();
-                moneychange();
-                document.getElementById('game_bg').innerHTML = '<video src="files/video/tarakan.mp4" controls autoplay loop style="max-width: 50%"></video>'
-                close_mainmenu();
+                start();
+                document.getElementById('game_bg').innerHTML = '<video src="files/video/tarakan.mp4" controls autoplay loop style="max-width: 90%"></video>'
                 break;
             case "lilium":
+            case "Lilium":
+                var header1 = document.querySelectorAll('.game-menu');
+                var mark1 = document.querySelectorAll('.game_hud');
                 health = 100;
                 year = 12;
                 day = 12;
                 mon = 7;
                 money = 333;
                 document.body.style.backgroundColor = "#a1303f";
-                healthchange();
-                daychange();
-                monchange();
-                yearchange();
-                moneychange();
-                document.getElementById('game_bg').innerHTML = '<video src="files/video/lilium.mp4" controls autoplay style="max-width: 60%"></video>'
-                close_mainmenu();
+                for (var i = 0; i < header1.length; i++) {
+                    header1[i].style.backgroundColor = "#2e0e12";
+                }
+                for (var i = 0; i < mark1.length; i++) {
+                    mark1[i].style.backgroundColor = "#2e0e12";
+                }
+                document.getElementsByClassName('game-menu-1')[0].style.backgroundColor = '#2e0e12';
+                start();
+                document.getElementById('game_bg').innerHTML = '<video src="files/video/lilium.mp4" controls autoplay style="max-width: 90%"></video>'
                 break;
             default:
                 var a0 = Number(code.slice(0, 3));
@@ -120,12 +113,7 @@ function resume() {
                 day = a2;
                 mon = a3;
                 money = a4 / 2;
-                healthchange();
-                daychange();
-                monchange();
-                yearchange();
-                moneychange();
-                close_mainmenu();
+                start();
                 break;
         }
     }
