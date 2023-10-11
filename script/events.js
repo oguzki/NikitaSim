@@ -163,7 +163,6 @@ function choice2() {
                 event2_subname.textContent = "Мало того, что дома ничего нечего выпить, так ещё и куратор забил тревогу из-за вашего отсутствия. Вы потеряли 7 здоровья";
                 health = health - 7;
                 healthchange();
-                nextDay_withoutEvent();
             }
             break;
     }
