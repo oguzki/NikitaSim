@@ -79,6 +79,7 @@ function drink() {
     video_event.style.zIndex = "4";
     video_event.style.opacity = "1";
     var drink_random = Math.floor(Math.random() * 2) + 1;
+    video_name.style.display = "block";
     video_subname.style.display = "block";
     video_button.textContent = "ок";
     switch (drink_random) {
@@ -103,7 +104,7 @@ function drink() {
             var drink_boyarin = Math.floor(Math.random() * 4) + 2;
             video.src = "files/video/ozon.mp4";
             video_name.textContent = "В честь праздника можно и...";
-            video_subname.textContent = "Вы потеряли 20 рублей и " + drink_boyarin + " здоровья."
+            video_subname.textContent = "Вы потеряли 20 рублей и " + drink_boyarin + " здоровья.";
             health = health - drink_boyarin;
             healthchange();
             break;
