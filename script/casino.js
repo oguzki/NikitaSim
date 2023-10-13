@@ -142,15 +142,15 @@ function kzcheck() {
                     game_casino_winlose.textContent = "почти...";
                     winlose_pic.src = "https://media.tenor.com/ViC3bHngL0QAAAAC/%D0%B1%D1%8D%D0%B1%D1%8D%D0%B9-%D0%B1%D0%B5%D0%B1%D0%B5%D0%B9.gif";
                     winlose_pic.style.height = "151px";
-                    money = money + (Math.round(stavka * 1.16) - stavka);
+                    money = money + (Math.round(stavka * 1.39) - stavka);
                     moneychange();
                     break;
                 default:
-                    money = money - stavka;
-                    moneychange();
                     game_casino_winlose.textContent = "...";
                     winlose_pic.src = "https://media.tenor.com/GIVLitDIxr8AAAAC/breaking-bad-walter-white.gif";
                     winlose_pic.style.height = "147px";
+                    money = money - stavka;
+                    moneychange();
                     break;
             }
     }
