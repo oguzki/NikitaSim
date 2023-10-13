@@ -173,57 +173,74 @@ function openchoice() {
     event1.style.opacity = "1";
 }
 
+function daychecker() {
+    if (code == 'lilium' || code == 'Lilium') {
+        switch (true) {
+            case money >= 100000:
+                video_event.style.zIndex = "4";
+                video_event.style.opacity = "1";
+                video.src = "files/video/theend.mp4";
+                video_name.textContent = "Happy End";
+                video_subname.style.display = "none";
+                video_button.style.display = "none";
+                break;
+        }
+    } else {
+        switch (true) {
+            case money >= 100000:
+                video_event.style.zIndex = "4";
+                video_event.style.opacity = "1";
+                video.src = "files/video/theend.mp4";
+                video_name.textContent = "Happy End";
+                video_subname.style.display = "none";
+                video_button.style.display = "none";
+                break;
+            case health <= 0:
+                event2.style.zIndex = "4";
+                event2.style.opacity = "1";
+                event2_name.textContent = "инсульт жопы";
+                event2_subname.textContent = "Вы не дожили до следующего дня...";
+                event2_button.textContent = "принять судьбу"
+                break;
+            default:
+                randomevent();
+                break;
+        }
+    }
+}
+
 function randomevent() {
-    switch (true) {
-        case money >= 100000:
-            video_event.style.zIndex = "4";
-            video_event.style.opacity = "1";
-            video.src = "files/video/theend.mp4";
-            video_name.textContent = "Happy End";
-            video_subname.style.display = "none";
-            video_button.style.display = "none";
+    random = Math.floor(Math.random() * 10) + 1;
+    switch (random) {
+        case 1:
+            openchoice();
+            event1_subname.textContent = robj[trackindex = 0].name;
+            event1_button1.textContent = robj[trackindex = 0].choice1;
+            event1_button2.textContent = robj[trackindex = 0].choice2;
             break;
-        case health <= 0:
-            event2.style.zIndex = "4";
-            event2.style.opacity = "1";
-            event2_name.textContent = "инсульт жопы";
-            event2_subname.textContent = "Вы не дожили до следующего дня...";
-            event2_button.textContent = "принять судьбу"
+        case 2:
+            openchoice();
+            event1_subname.textContent = robj[trackindex = 1].name;
+            event1_button1.textContent = robj[trackindex = 1].choice1;
+            event1_button2.textContent = robj[trackindex = 1].choice2;
             break;
-        default:
-            random = Math.floor(Math.random() * 10) + 1;
-            switch (random) {
-                case 1:
-                    openchoice();
-                    event1_subname.textContent = robj[trackindex = 0].name;
-                    event1_button1.textContent = robj[trackindex = 0].choice1;
-                    event1_button2.textContent = robj[trackindex = 0].choice2;
-                    break;
-                case 2:
-                    openchoice();
-                    event1_subname.textContent = robj[trackindex = 1].name;
-                    event1_button1.textContent = robj[trackindex = 1].choice1;
-                    event1_button2.textContent = robj[trackindex = 1].choice2;
-                    break;
-                case 3:
-                    openchoice();
-                    event1_subname.textContent = robj[trackindex = 2].name;
-                    event1_button1.textContent = robj[trackindex = 2].choice1;
-                    event1_button2.textContent = robj[trackindex = 2].choice2;
-                    break;
-                case 4:
-                    openchoice();
-                    event1_subname.textContent = robj[trackindex = 3].name;
-                    event1_button1.textContent = robj[trackindex = 3].choice1;
-                    event1_button2.textContent = robj[trackindex = 3].choice2;
-                    break;
-                case 5:
-                    openchoice();
-                    event1_subname.textContent = robj[trackindex = 4].name;
-                    event1_button1.textContent = robj[trackindex = 4].choice1;
-                    event1_button2.textContent = robj[trackindex = 4].choice2;
-                    break;
-            }
+        case 3:
+            openchoice();
+            event1_subname.textContent = robj[trackindex = 2].name;
+            event1_button1.textContent = robj[trackindex = 2].choice1;
+            event1_button2.textContent = robj[trackindex = 2].choice2;
+            break;
+        case 4:
+            openchoice();
+            event1_subname.textContent = robj[trackindex = 3].name;
+            event1_button1.textContent = robj[trackindex = 3].choice1;
+            event1_button2.textContent = robj[trackindex = 3].choice2;
+            break;
+        case 5:
+            openchoice();
+            event1_subname.textContent = robj[trackindex = 4].name;
+            event1_button1.textContent = robj[trackindex = 4].choice1;
+            event1_button2.textContent = robj[trackindex = 4].choice2;
             break;
     }
 }
