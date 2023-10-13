@@ -154,6 +154,7 @@ function nextDay() {
     switch (code) {
         case 'lilium':
             day = day + 1;
+            daychecker();
             if (mon === 2) {
                 if (day === 29) {
                     nextMon();
@@ -173,7 +174,7 @@ function nextDay() {
         default:
             drink_button.style.display = "block";
             day = day + 1;
-            randomevent();
+            daychecker();
             holidays();
             if (mon === 2) {
                 if (day === 29) {
