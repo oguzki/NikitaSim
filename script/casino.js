@@ -50,7 +50,6 @@ function close_casino() {
 
 function casino_play() {
     stavka = Number(document.getElementById('stavki').value);
-    game_casino_winlose.textContent = "";
     switch (true) {
         case stavka > money:
             game_casino_winlose.textContent = "ставка больше баланса";
