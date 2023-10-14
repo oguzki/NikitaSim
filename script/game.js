@@ -161,8 +161,10 @@ function nextDay() {
                     scholarship();
                 }
             }
-            if (day === 32) {
+            if (day >= 32) {
+                day = 1;
                 nextMon();
+                daychange();
                 scholarship();
             } else {
                 daychange();
@@ -182,8 +184,10 @@ function nextDay() {
                     scholarship();
                 }
             }
-            if (day === 32) {
+            if (day >= 32) {
+                day = 1;
                 nextMon();
+                daychange();
                 scholarship();
             } else {
                 daychange();
@@ -204,8 +208,10 @@ function nextDay_withoutEvent() {
             scholarship();
         }
     }
-    if (day === 32) {
+    if (day >= 32) {
+        day = 1;
         nextMon();
+        daychange();
         scholarship();
     } else {
         daychange();
