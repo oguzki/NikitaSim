@@ -1,11 +1,19 @@
-const mainmenu = document.getElementById('mainmenu');
+const mainmenu1 = document.getElementById('mainmenu1');
+const mainmenu2 = document.getElementById('mainmenu2');
+const mainmenu3 = document.getElementById('mainmenu3');
 const menu_wrong = document.getElementById('menu_wrong');
 
 var code;
 
+var abc = 0;
+
 function close_mainmenu() {
-    mainmenu.style.zIndex = "-1";
-    mainmenu.style.opacity = "0";
+    mainmenu1.style.zIndex = "-1";
+    mainmenu1.style.opacity = "0";
+    mainmenu2.style.zIndex = "-1";
+    mainmenu2.style.opacity = "0";
+    mainmenu3.style.zIndex = "-1";
+    mainmenu3.style.opacity = "0";
 }
 
 function rules() {
@@ -15,6 +23,16 @@ function rules() {
     video.src = "files/video/rules.mp4";
     video_subname.style.display = "none";
     video_button.textContent = "скип";
+}
+
+function changescreen() {
+    if (abc == 0) {
+        mainmenu2.style.width = "100%";
+        abc = 1;
+    } else {
+        mainmenu2.style.width = "0%";
+        abc = 0;
+    }
 }
 
 function start() {
@@ -39,7 +57,6 @@ function play() {
 function resume() {
     code = document.getElementById('parol').value;
     if (code == 0) {
-        menu_wrong.style.display = "block";
         menu_wrong.textContent = "а где пароль?";
     } else {
         switch (code) {
@@ -117,7 +134,6 @@ function resume() {
                     start();
                     break;
                 } else {
-                    menu_wrong.style.display = "block";
                     menu_wrong.textContent = "пароль неверный";
                 }
         }
