@@ -8,6 +8,7 @@
 	<title>NikitaSim</title>
 	<link rel="stylesheet" href="css/menu.css">
 	<link rel="stylesheet" href="css/game.css">
+	<link rel="stylesheet" href="css/casino.css">
 	<link rel="stylesheet" href="https://rizobyte.github.io/font-base/fonts.css">
 </head>
 
@@ -33,7 +34,7 @@
 			<h3 class="mainmenu-disc"><a class="mainmenu-disclink" href="https://github.com/oguzki"
 					target="_blank">огузки корп.</a>, 2023
 			</h3>
-			<h6 class="mainmenu-disc" style="font-family: opensans-light; font-size: 12px;">v5.0.2 (Erythŕonium)</h6>
+			<h6 class="mainmenu-disc" style="font-family: opensans-light; font-size: 12px;">v5.0.3 (Erythŕonium)</h6>
 		</div>
 	</div>
 	</div>
@@ -80,7 +81,7 @@
 	</div>
 
 
-	<div id="game_casino">
+	<div id="casino">
 		<div style="margin-top: 30px; text-align: center;">
 			<h3>баланс: <mark id="money_casino" style="color: white; background-color: #ffffff00;"></mark></h3>
 		</div>
@@ -89,27 +90,23 @@
 			<h2 class="k" id="casino_number2">-</h2>
 			<h2 class="k" id="casino_number3">-</h2>
 		</div>
-		<h3 onclick="casino_play()"
-			style="background-color: green; margin: 30px; cursor: pointer; user-select: none; text-align: center; color: white">
-			сыграть</h3>
-		<div style="margin: 30px; text-align: center;">
-			<input id="stavki" type="number" size="20" style="text-align: center">
-		</div>
+		<h3 onclick="casino_play()" id="casino_play_button">сыграть</h3>
+		<input id="stavki" type="number"
+			style="text-align: center; font-size: 25px; width: 200px; border-radius: 5px; margin: 30px;">
 		<div style="text-align: center;">
 			<img id="winlose_pic" src="files/gif/base.gif" style="width: 200px; height: 200px;">
-			<h1 id="game_casino_winlose" style="background-color: white; margin: 30px;"></h1>
+			<h1 id="casino_winlose" style="background-color: white; margin: 30px; white-space: normal;"></h1>
 		</div>
-		<div
-			style="background-color: white; display: flex; justify-content: center; height: 50px; margin: 30px; flex-direction: column; border-radius: 10px;">
-			<h4 style="color: black; text-align: left; padding-left: 3px;">Последний выигрыш</h4>
+		<div id="casino_last_win">
+			<h4 style="color: black; text-align: left; padding-left: 5px;">Последний выигрыш</h4>
 			<div
 				style="display: flex; align-items: center; justify-content: space-between; padding-left: 5px; padding-right: 5px;">
-				<h3 id="game_casino_last_win"></h3>
-				<h4 id="game_casino_last_win_sum"></h4>
+				<h3 id="casino_last_win_id"></h3>
+				<h4 id="casino_last_win_sum"></h4>
 			</div>
 		</div>
 	</div>
-	<div id="game_casino_close" onclick="close_casino()"></div>
+	<div id="casino_close" onclick="close_casino()"></div>
 
 
 	<header class="game-menu">
