@@ -13,12 +13,12 @@
     z-index: 3;
     opacity: 1;
     overflow-x: hidden;
-    transition: .5s;
+    transition: 1.17s;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #212121;
+    background-color: rgba(0, 0, 0, 0.78);
     text-align: center;
     white-space: nowrap;
 }
@@ -32,17 +32,21 @@
     z-index: 3;
     opacity: 1;
     overflow-x: hidden;
-    transition: .5s;
+    transition: .7s;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #212121;
+    background-color: rgba(0, 0, 0, 0.78);
     text-align: center;
     white-space: nowrap;
 }
 
 #mainmenu3 {
+    background-image: url(../files/img/cat.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     width: 100%;
     height: 100%;
     top: 0;
@@ -51,19 +55,7 @@
     z-index: 2;
     opacity: 1;
     overflow-x: hidden;
-    background-color: #212121;
-}
-
-@media screen and (orientation: landscape) {
-    #video {
-        max-width: 75%;
-    }
-}
-
-@media screen and (orientation: portrait) {
-    #video {
-        max-width: 90%;
-    }
+    transition: .5s;
 }
 
 .mainmenu-button {
