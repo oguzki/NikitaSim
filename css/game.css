@@ -10,19 +10,19 @@ body {
 }
 
 h4 {
-    font-family: ubuntu;
+    font-family: Ubuntu-Medium;
     color: white;
     text-align: center;
 }
 
 h3 {
-    font-family: ubuntu;
+    font-family: Ubuntu-Medium;
     color: white;
     text-align: center;
 }
 
 h2 {
-    font-family: ubuntu;
+    font-family: Ubuntu-Medium;
     color: white;
     text-align: center;
 }
@@ -52,7 +52,7 @@ h2 {
     background-color: #424242;
     color: white;
     border: 1px solid white;
-    font-family: ubuntu;
+    font-family: Ubuntu-Medium;
     font-size: 20px;
     cursor: pointer;
     user-select: none;
@@ -115,7 +115,7 @@ h2 {
 
 #game_casino_last_win {
     color: gray;
-    font-family: ubuntu;
+    font-family: Ubuntu-Medium;
 }
 
 #game_casino_last_win_sum {
@@ -124,7 +124,7 @@ h2 {
 }
 
 .game-choice-button {
-    font-family: ubuntu;
+    font-family: Ubuntu-Medium;
     padding: 5px;
     border: 1px solid black;
     margin: 0px 10px;
