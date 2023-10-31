@@ -48,13 +48,13 @@
 
 .mainmenu-disc {
     color: white;
-    font-family: ubuntu;
+    font-family: Ubuntu-Medium;
     text-align: center;
 }
 
 .mainmenu-disclink {
     color: red;
-    font-family: ubuntu;
+    font-family: Ubuntu-Medium;
     text-decoration: none;
     transition: .5s;
 }
