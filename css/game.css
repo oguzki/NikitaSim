@@ -84,46 +84,6 @@ h2 {
     flex-direction: column;
 }
 
-#game_casino {
-    width: 0;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    z-index: 3;
-    opacity: 1;
-    overflow-x: hidden;
-    transition: .5s;
-    background-image: url(../files/img/bg_casino.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    white-space: nowrap;
-}
-
-#game_casino_close {
-    width: 0;
-    height: 1920px;
-    top: 0;
-    left: 0;
-    position: fixed;
-    z-index: 2;
-    opacity: 1;
-    overflow-x: hidden;
-    transition: .5s;
-    background-color: rgba(255, 0, 0, 0.205);
-}
-
-#game_casino_last_win {
-    color: gray;
-    font-family: Ubuntu-Regular;
-}
-
-#game_casino_last_win_sum {
-    color: rgb(42, 218, 18);
-    font-family: OpenSans-Light;
-}
-
 .game-choice-button {
     font-family: Ubuntu-Regular;
     padding: 5px;
