@@ -1,0 +1,71 @@
+#casino {
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 3;
+    opacity: 1;
+    overflow-x: hidden;
+    transition: .5s;
+    background-image: url(../files/img/bg_casino.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#casino_close {
+    width: 0;
+    height: 1920px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+    opacity: 1;
+    overflow-x: hidden;
+    transition: .5s;
+    background-color: rgba(255, 0, 0, 0.205);
+}
+
+#casino_last_win {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    margin: 30px;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 250px;
+}
+
+#casino_last_win_id {
+    color: gray;
+    font-family: Ubuntu-Regular;
+}
+
+#casino_last_win_sum {
+    color: rgb(42, 218, 18);
+    font-family: OpenSans-Light;
+}
+
+#casino_play_button {
+    background-color: rgb(37, 153, 37);
+    margin: 30px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    width: 150px;
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+#casino_play_button:hover {
+    background-color: #212121;
+    color: goldenrod;
+}
