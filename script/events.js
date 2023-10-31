@@ -7,6 +7,11 @@ const audio = document.getElementById('audio');
 
 const robj = [
     {
+        name: 'заглушка',
+        choice1: 'заглушка',
+        choice2: 'заглушка',
+    },
+    {
         name: 'сегодня вас укусила пчела',
         choice1: 'затерпеть',
         choice2: 'попытаться убить',
@@ -22,7 +27,7 @@ const robj = [
         choice2: 'я за жителей зимбабве',
     },
     {
-        name: 'вы нашли закладку с солью. что будем делать?',
+        name: 'вы нашли закладку с солью. что будете делать?',
         choice1: 'продать',
         choice2: 'захавать',
     },
@@ -210,37 +215,11 @@ function daychecker() {
 }
 
 function randomevent() {
-    random = Math.floor(Math.random() * 10) + 1;
-    switch (random) {
-        case 1:
-            openchoice();
-            event1_subname.textContent = robj[trackindex = 0].name;
-            event1_button1.textContent = robj[trackindex = 0].choice1;
-            event1_button2.textContent = robj[trackindex = 0].choice2;
-            break;
-        case 2:
-            openchoice();
-            event1_subname.textContent = robj[trackindex = 1].name;
-            event1_button1.textContent = robj[trackindex = 1].choice1;
-            event1_button2.textContent = robj[trackindex = 1].choice2;
-            break;
-        case 3:
-            openchoice();
-            event1_subname.textContent = robj[trackindex = 2].name;
-            event1_button1.textContent = robj[trackindex = 2].choice1;
-            event1_button2.textContent = robj[trackindex = 2].choice2;
-            break;
-        case 4:
-            openchoice();
-            event1_subname.textContent = robj[trackindex = 3].name;
-            event1_button1.textContent = robj[trackindex = 3].choice1;
-            event1_button2.textContent = robj[trackindex = 3].choice2;
-            break;
-        case 5:
-            openchoice();
-            event1_subname.textContent = robj[trackindex = 4].name;
-            event1_button1.textContent = robj[trackindex = 4].choice1;
-            event1_button2.textContent = robj[trackindex = 4].choice2;
-            break;
+    random = Math.floor(Math.random() * 11) + 1;
+    if (random <= 5) {
+        openchoice();
+        event1_subname.textContent = robj[trackindex = random].name;
+        event1_button1.textContent = robj[trackindex = random].choice1;
+        event1_button2.textContent = robj[trackindex = random].choice2;
     }
 }
