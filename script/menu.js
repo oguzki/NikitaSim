@@ -28,9 +28,11 @@ function rules() {
 function changescreen() {
     if (abc == 0) {
         mainmenu2.style.width = "100%";
+        mainmenu1.style.opacity = "0";
         abc = 1;
     } else {
         mainmenu2.style.width = "0%";
+        mainmenu1.style.opacity = "1";
         abc = 0;
     }
 }
