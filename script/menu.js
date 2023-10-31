@@ -40,7 +40,7 @@ function resume() {
     code = document.getElementById('parol').value;
     if (code == 0) {
         menu_wrong.style.display = "block";
-        menu_wrong.textContent = "а где пароль?"
+        menu_wrong.textContent = "а где пароль?";
     } else {
         switch (code) {
             case "wow":
@@ -103,18 +103,23 @@ function resume() {
                 document.getElementById('game_bg').innerHTML = '<video src="files/video/lilium.mp4" controls autoplay style="max-width: 90%"></video>'
                 break;
             default:
-                var a0 = Number(code.slice(0, 3));
-                var a1 = Number(code.slice(4, 6));
-                var a2 = Number(code.slice(7, 9));
-                var a3 = Number(code.slice(10, 12));
-                var a4 = Number(code.slice(15));
-                health = a0;
-                year = a1;
-                day = a2;
-                mon = a3;
-                money = a4 / 2;
-                start();
-                break;
+                if (code.includes("Y") && code.includes("C") && code.includes("-")) {
+                    var a0 = Number(code.slice(0, 3));
+                    var a1 = Number(code.slice(4, 6));
+                    var a2 = Number(code.slice(7, 9));
+                    var a3 = Number(code.slice(10, 12));
+                    var a4 = Number(code.slice(14));
+                    health = a0;
+                    year = a1;
+                    day = a2;
+                    mon = a3;
+                    money = a4 / 2;
+                    start();
+                    break;
+                } else {
+                    menu_wrong.style.display = "block";
+                    menu_wrong.textContent = "пароль неверный";
+                }
         }
     }
 
