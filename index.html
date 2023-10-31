@@ -18,24 +18,36 @@
 	<audio id="audio" src="" autoplay></audio>
 
 
+	<div id="mainmenu1">
+		<h1 id="logo">NikitaSim</h1>
 
-	<div id="mainmenu">
-		<img src="files/img/nikita-sim-logo.png" style="max-width: 70%; background-color: #a1303f; border-radius: 25px;">
-		<button class="mainmenu-button" onclick="play()" style="font-size: 25px;">начать</button>
-		<div style="text-align: center;">
-			<h3>или введите пароль</h3>
-			<input id="parol" size="30" style="text-align: center">
-			<button class="mainmenu-button" onclick="resume()">продолжить</button>
+		<div style="margin: 20px 0px;">
+			<button class="mainmenu-button" onclick="play()">новая игра</button>
+			<button class="mainmenu-button" onclick="changescreen()">продолжить</button>
 		</div>
-		<h3 id="menu_wrong">-</h3>
-		<h3 class="mainmenu-disc">данная игра является шуточной и не имеет ничего общего с
-			реальностью (кроме
-			Никиты)</h3>
-		<h3 class="mainmenu-disc"><a class="mainmenu-disclink" href="https://github.com/oguzki" target="_blank">огузки
-				corp.</a>, 2023
-		</h3>
-		<h6 class="mainmenu-disc" style="font-family: opensans-light; font-size: 12px;">v4.6.1 (Anticlea)</h6>
+
+		<div style="margin: 20px 0px;">
+			<h3 class="mainmenu-disc">данная игра является шуточной и не имеет <br>ничего общего с
+				реальностью (кроме
+				Никиты)</h3>
+			<h3 class="mainmenu-disc"><a class="mainmenu-disclink" href="https://github.com/oguzki"
+					target="_blank">огузки
+					corp.</a>, 2023
+			</h3>
+			<h6 class="mainmenu-disc" style="font-family: opensans-light; font-size: 12px;">v5.0 (Erythŕonium)</h6>
+		</div>
 	</div>
+	</div>
+
+	<div id="mainmenu2">
+		<h2>введите пароль</h2>
+		<input id="parol" size="25" style="text-align: center; font-size: 32px; margin: 10px 0px;" type="text">
+		<button class="mainmenu-button" onclick="resume()">продолжить</button>
+		<h3 id="menu_wrong">⠀</h3>
+		<button class="mainmenu-button" onclick="changescreen()" style="margin: 10px 0px;">вернуться в меню</button>
+	</div>
+
+	<div id="mainmenu3"></div>
 
 
 
@@ -91,7 +103,8 @@
 		<div
 			style="background-color: white; display: flex; justify-content: center; height: 50px; margin: 30px; flex-direction: column; border-radius: 10px;">
 			<h4 style="color: black; text-align: left; padding-left: 3px;">Последний выигрыш</h4>
-			<div style="display: flex; align-items: center; justify-content: space-between; padding-left: 5px; padding-right: 5px;">
+			<div
+				style="display: flex; align-items: center; justify-content: space-between; padding-left: 5px; padding-right: 5px;">
 				<h3 id="game_casino_last_win"></h3>
 				<h4 id="game_casino_last_win_sum"></h4>
 			</div>
@@ -103,7 +116,8 @@
 	<header class="game-menu">
 		<h3>деньги: <mark class="game_hud" id="money_game"></mark></h3>
 		<h3>здоровье: <mark class="game_hud" id="hp_game"></mark></h3>
-		<h3>дата: <mark class="game_hud" id="day_game">0</mark>.<mark class="game_hud" id="mon_game">0</mark>.<mark class="game_hud" id="year_game">0</mark></h3>
+		<h3>дата: <mark class="game_hud" id="day_game">0</mark>.<mark class="game_hud" id="mon_game">0</mark>.<mark
+				class="game_hud" id="year_game">0</mark></h3>
 	</header>
 
 	<header class="game-menu">
