@@ -17,7 +17,7 @@ var stavka;
 
 function open_casino() {
     casino.style.width = "300px";
-    casino_close.style.width = "1920px";
+    casino_close.style.width = "100%";
     last_win();
 }
 

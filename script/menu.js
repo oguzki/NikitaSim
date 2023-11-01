@@ -1,6 +1,7 @@
 const mainmenu1 = document.getElementById('mainmenu1');
 const mainmenu2 = document.getElementById('mainmenu2');
 const mainmenu3 = document.getElementById('mainmenu3');
+const mainmenu4 = document.getElementById('mainmenu4');
 const menu_wrong = document.getElementById('menu_wrong');
 
 var code;
@@ -14,6 +15,8 @@ function close_mainmenu() {
     mainmenu2.style.opacity = "0";
     mainmenu3.style.zIndex = "-1";
     mainmenu3.style.opacity = "0";
+    mainmenu4.style.zIndex = "-1";
+    mainmenu4.style.opacity = "0";
 }
 
 function rules() {
