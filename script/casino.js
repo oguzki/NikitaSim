@@ -93,9 +93,9 @@ function kzcheck() {
     switch (code) {
         case 'lilium':
         case 'Lilium':
-            n1.innerHTML = '<img class="gems" src="files/img/gems/' + '5' + '.png">';
-            n2.innerHTML = '<img class="gems" src="files/img/gems/' + '5' + '.png">';
-            n3.innerHTML = '<img class="gems" src="files/img/gems/' + '5' + '.png">';
+            n1.innerHTML = '<img class="gems" src="files/img/gems/5.png">';
+            n2.innerHTML = '<img class="gems" src="files/img/gems/5.png">';
+            n3.innerHTML = '<img class="gems" src="files/img/gems/5.png">';
             casino_winlose.textContent = "взлом казино";
             money = money + ((stavka * 5) - stavka);
             moneychange();
