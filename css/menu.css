@@ -97,6 +97,7 @@
 }
 
 .mainmenu-disc {
+    white-space: normal;
     color: white;
     font-family: Ubuntu-Regular;
     text-align: center;
