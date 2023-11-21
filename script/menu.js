@@ -136,8 +136,12 @@ function resume() {
                     day = a2;
                     mon = a3;
                     money = a4 / 2;
-                    start();
-                    break;
+                    if (health > 100 || day > 31 || mon > 12) {
+                        menu_wrong.textContent = "пароль неверный";
+                    } else {
+                        start();
+                        break;
+                    }
                 } else {
                     menu_wrong.textContent = "пароль неверный";
                 }
