@@ -36,8 +36,6 @@ function last_win() {
 function close_casino() {
     casino.style.width = "0";
     casino_close.style.width = "0";
-    audio.src = "files/audio/delete.mp3";
-    audio.load();
     n1.textContent = "-";
     n2.textContent = "-";
     n3.textContent = "-";
