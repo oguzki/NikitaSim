@@ -122,7 +122,7 @@ function resume() {
                 }
                 document.getElementsByClassName('game-menu-1')[0].style.backgroundColor = '#2e0e12';
                 start();
-                document.getElementById('game_bg').innerHTML = '<video src="files/video/lilium.mp4" controls autoplay style="max-width: 90%"></video>'
+                document.getElementById('game_bg').innerHTML = '<video src="files/video/lilium.mp4" controls autoplay style="max-width: 90%"></video>';
                 break;
             default:
                 if (code.includes("Y") && code.includes("C") && code.includes("-")) {

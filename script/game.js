@@ -42,29 +42,23 @@ function choice3() {
 }
 
 function hospital() {
+    event2.style.zIndex = "4";
+    event2.style.opacity = "1";
     switch (true) {
         case health === 100:
-            event2.style.zIndex = "4";
-            event2.style.opacity = "1";
             event2_name.textContent = "Добро пожаловать в дурку";
             event2_subname.textContent = "Чел, ты полностью здоров...";
             break;
         case money <= 0:
-            event2.style.zIndex = "4";
-            event2.style.opacity = "1";
             event2_name.textContent = "Добро пожаловать в дурку";
             event2_subname.textContent = "У вас нет денег";
             break;
         case health <= 0:
-            event2.style.zIndex = "4";
-            event2.style.opacity = "1";
             event2_name.textContent = "инсульт жопы";
             event2_subname.textContent = "Вы не успели добраться до больницы и умерли...";
             event2_button.textContent = "принять судьбу"
             break;
         default:
-            event2.style.zIndex = "4";
-            event2.style.opacity = "1";
             var heal_cost = (100 - health) * 6;
             event2_name.textContent = "Добро пожаловать в дурку";
             event2_subname.textContent = "Вы востановили здоровье. Стоимость лечения составила " + heal_cost + " рублей.";
@@ -153,48 +147,12 @@ function reset_call_mother() {
 function nextDay() {
     switch (code) {
         case 'lilium':
-            day = day + 1;
-            daychecker();
-            if (mon === 2) {
-                if (day === 29) {
-                    nextMon();
-                    scholarship();
-                }
-            }
-            if (day >= 32) {
-                day = 1;
-                nextMon();
-                daychange();
-                scholarship();
-            } else {
-                daychange();
-            }
-            if (mon >= 13) {
-                nextYear();
-            }
+            votkomuto();
             break;
         default:
             drink_button.style.display = "block";
-            day = day + 1;
-            daychecker();
             holidays();
-            if (mon === 2) {
-                if (day === 29) {
-                    nextMon();
-                    scholarship();
-                }
-            }
-            if (day >= 32) {
-                day = 1;
-                nextMon();
-                daychange();
-                scholarship();
-            } else {
-                daychange();
-            }
-            if (mon >= 13) {
-                nextYear();
-            }
+            votkomuto();
             break;
     }
 }
@@ -202,6 +160,28 @@ function nextDay() {
 function nextDay_withoutEvent() {
     day = day + 1;
     holidays();
+    if (mon === 2) {
+        if (day === 29) {
+            nextMon();
+            scholarship();
+        }
+    }
+    if (day >= 32) {
+        day = 1;
+        nextMon();
+        daychange();
+        scholarship();
+    } else {
+        daychange();
+    }
+    if (mon >= 13) {
+        nextYear();
+    }
+}
+
+function votkomuto() {
+    day = day + 1;
+    daychecker();
     if (mon === 2) {
         if (day === 29) {
             nextMon();
