@@ -150,7 +150,7 @@ function kzcheck() {
                     winlose_pic.src = "https://media.tenor.com/ViC3bHngL0QAAAAC/%D0%B1%D1%8D%D0%B1%D1%8D%D0%B9-%D0%B1%D0%B5%D0%B1%D0%B5%D0%B9.gif";
                     winlose_pic.style.height = "151px";
                     winbet = (Math.round(stavka * 1.39) - stavka);
-                    money = money + winbet;
+                    money = money - stavka + winbet;
                     moneychange();
                     break;
                 default:
