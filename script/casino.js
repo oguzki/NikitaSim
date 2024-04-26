@@ -4,10 +4,11 @@ var n3 = document.getElementById('casino_number3');
 
 const casino = document.getElementById('casino');
 const casino_close = document.getElementById('casino_close');
-const casino_last_win_id = document.getElementById('casino_last_win_id');
-const casino_last_win_sum = document.getElementById('casino_last_win_sum');
+const casino_fake_win_id = document.getElementById('casino_fake_win_id');
+const casino_fake_win_sum = document.getElementById('casino_fake_win_sum');
 const casino_winlose = document.getElementById('casino_winlose');
 const winlose_pic = document.getElementById('winlose_pic');
+const casino_last_win_sum = document.getElementById('casino_last_win_sum');
 
 var r1;
 var r2;
@@ -18,19 +19,19 @@ var stavka;
 function open_casino() {
     casino.style.width = "300px";
     casino_close.style.width = "100%";
-    last_win();
+    fake_win();
 }
 
-function last_win() {
+function fake_win() {
     var lw1 = Math.floor(Math.random() * 8) + 1;
     var lw2 = Math.floor(Math.random() * 8) + 1;
     var lw3 = Math.floor(Math.random() * 8) + 1;
     var lw4 = Math.floor(Math.random() * 8) + 1;
     var lw5 = Math.floor(Math.random() * 8) + 1;
     var lw6 = Math.floor(Math.random() * 8) + 1;
-    casino_last_win_id.textContent = lw1 + "" + "" + lw2 + "**********" + lw3 + "" + lw4 + "" + lw5 + "" + lw6;
-    casino_last_win_sum.textContent = "+" + (Math.floor(Math.random() * 9999) + 1) + "₽";
-    setTimeout(last_win, 4500);
+    casino_fake_win_id.textContent = lw1 + "" + "" + lw2 + "**********" + lw3 + "" + lw4 + "" + lw5 + "" + lw6;
+    casino_fake_win_sum.textContent = "+" + (Math.floor(Math.random() * 9999) + 1) + "₽";
+    setTimeout(fake_win, 4500);
 }
 
 function close_casino() {
@@ -39,9 +40,10 @@ function close_casino() {
     n1.textContent = "-";
     n2.textContent = "-";
     n3.textContent = "-";
-    casino_last_win_id.textContent = "";
-    casino_last_win_sum.textContent = "";
+    casino_fake_win_id.textContent = "";
+    casino_fake_win_sum.textContent = "";
     casino_winlose.textContent = "";
+    casino_last_win_sum.textContent = "";
     winlose_pic.src = "files/gif/base.gif";
     winlose_pic.style.height = "200px";
 }
@@ -87,6 +89,8 @@ function kzpicks() {
     kzcheck();
 }
 
+var winbet;
+
 function kzcheck() {
     switch (code) {
         case 'lilium':
@@ -95,7 +99,8 @@ function kzcheck() {
             n2.innerHTML = '<img class="gems" src="files/img/gems/5.png">';
             n3.innerHTML = '<img class="gems" src="files/img/gems/5.png">';
             casino_winlose.textContent = "взлом казино";
-            money = money + ((stavka * 5) - stavka);
+            winbet = (stavka * 5);
+            money = money + winbet;
             moneychange();
             break;
         default:
@@ -104,42 +109,48 @@ function kzcheck() {
                     casino_winlose.textContent = "нормально";
                     winlose_pic.src = "https://media.tenor.com/lXrTXpd6W8YAAAAC/jadeyanh-vylerria.gif";
                     winlose_pic.style.height = "147px"
-                    money = money + (stavka * 2);
+                    winbet = (stavka * 2);
+                    money = money + winbet;
                     moneychange();
                     break;
                 case r1 === 2 && r2 === 2 && r3 === 2:
                     casino_winlose.textContent = "на мотороллер хватит";
                     winlose_pic.src = "https://media.tenor.com/ROmWbzs_aSQAAAAC/maddy-murk-murk-power.gif";
                     winlose_pic.style.height = "112px";
-                    money = money + Math.round(stavka * 2.5);
+                    winbet = (stavka * 2.5);
+                    money = money + winbet;
                     moneychange();
                     break;
                 case r1 === 3 && r2 === 3 && r3 === 3:
                     casino_winlose.textContent = "Всем пиво за мой счёт!";
                     winlose_pic.src = "https://media.tenor.com/I046lf0JnigAAAAd/deadp47-%D0%BF%D0%B8%D0%B2%D0%BE.gif";
                     winlose_pic.style.height = "365px"
-                    money = money + (stavka * 3);
+                    winbet = (stavka * 3);
+                    money = money + winbet;
                     moneychange();
                     break;
                 case r1 === 4 && r2 === 4 && r3 === 4:
                     casino_winlose.textContent = "Победа!";
                     winlose_pic.src = "https://media.tenor.com/vBj5YoMJbo8AAAAC/%D0%BF%D0%BE%D0%B1%D0%B5%D0%B4%D0%B0-%D0%BA%D1%83%D1%85%D0%BD%D1%8F.gif";
-                    winlose_pic.style.height = "115px"
-                    money = money + (stavka * 4);
+                    winlose_pic.style.height = "115px";
+                    winbet = (stavka * 4);
+                    money = money + winbet;
                     moneychange();
                     break;
                 case r1 === 5 && r2 === 5 && r3 === 5:
                     casino_winlose.textContent = "ДЖЕКПОТ";
                     winlose_pic.src = "https://media.tenor.com/qNDgTlYUYwAAAAAC/jackpot-%D0%B4%D0%B6%D0%B5%D0%BA%D0%BF%D0%BE%D1%82.gif";
                     winlose_pic.style.height = "149px"
-                    money = money + (stavka * 5);
+                    winbet = (stavka * 5);
+                    money = money + winbet;
                     moneychange();
                     break;
                 case r1 === r2 || r2 === r3 || r1 === r3:
                     casino_winlose.textContent = "почти...";
                     winlose_pic.src = "https://media.tenor.com/ViC3bHngL0QAAAAC/%D0%B1%D1%8D%D0%B1%D1%8D%D0%B9-%D0%B1%D0%B5%D0%B1%D0%B5%D0%B9.gif";
                     winlose_pic.style.height = "151px";
-                    money = money + (Math.round(stavka * 1.39) - stavka);
+                    winbet = (Math.round(stavka * 1.39) - stavka);
+                    money = money + winbet;
                     moneychange();
                     break;
                 default:
@@ -150,5 +161,17 @@ function kzcheck() {
                     moneychange();
                     break;
             }
+    }
+    if (casino_winlose.textContent == "...") {
+        casino_last_win_sum.textContent = "-" + stavka;
+        casino_last_win_sum.style.color = "red";
+    } else {
+        if (casino_winlose.textContent == "почти...") {
+            casino_last_win_sum.textContent = "-" + (stavka - winbet);
+            casino_last_win_sum.style.color = "red";
+        } else {
+            casino_last_win_sum.textContent = "+" + winbet;
+            casino_last_win_sum.style.color = "green";
+        }
     }
 }
