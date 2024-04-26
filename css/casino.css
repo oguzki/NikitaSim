@@ -31,7 +31,7 @@
     background-color: rgba(255, 0, 0, 0.205);
 }
 
-#casino_last_win {
+#casino_fake_win {
     background-color: white;
     display: flex;
     justify-content: center;
@@ -42,14 +42,22 @@
     width: 250px;
 }
 
-#casino_last_win_id {
+#casino_fake_win_id {
     color: gray;
     font-family: Ubuntu-Regular;
 }
 
-#casino_last_win_sum {
+#casino_fake_win_sum {
     color: rgb(42, 218, 18);
     font-family: OpenSans-Light;
+}
+
+#casino_last_win {
+    padding: 5px;
+    background-color: white;
+    text-align: center;
+    width: 200px;
+    border-radius: 5px;
 }
 
 #casino_play_button {
