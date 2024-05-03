@@ -5,6 +5,16 @@
     outline: 0;
 }
 
+::-webkit-scrollbar {
+    background-color: #1A1A1D;
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff5b;
+    border-radius: 3px;
+}
+
 body {
     background-color: #212121;
 }
