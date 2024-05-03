@@ -69,43 +69,76 @@ function hospital() {
     }
 }
 
-function drink() {
-    video_event.style.zIndex = "4";
-    video_event.style.opacity = "1";
-    var drink_random = Math.floor(Math.random() * 2) + 1;
-    video_name.style.display = "block";
-    video_subname.style.display = "block";
-    video_button.textContent = "ок";
-    switch (drink_random) {
+var zp;
+
+function work() {
+    event2.style.zIndex = "4";
+    event2.style.opacity = "1";
+    event2_name.textContent = "ПУТИН ПОЖАЛУЙСТА ПОМОГАЕТ ВСЕ СТУДЕНТ БЕДНЫЙ";
+    var schtraf = Math.floor((Math.random() * 5) + 1);
+    zp = Math.floor((Math.random() * 225) + 76);
+    switch (schtraf) {
         case 1:
-            video.src = "files/video/hryap.mp4";
-            video_name.textContent = "В честь праздника можно и выпить";
-            if (health < 100 && health >= 95) {
-                video_subname.textContent = "Вы потеряли 20 рублей, но восстановили здоровье до максимума.";
-                health = 100;
-                healthchange();
-            } else {
-                if (health < 95 && health > 0) {
-                    video_subname.textContent = "Вы потеряли 20 рублей, но восстановили 5 единиц здоровья.";
-                    health = health + 5;
-                    healthchange();
-                } else {
-                    video_subname.textContent = "Вы потеряли 20 рублей, но нормально так кайфанули.";
-                }
-            }
+            event2_subname.textContent = "Сегодня на смене Вы разбили бутылку пива. За такие приколы вы получите только половину ЗП. Вы заработали " + (zp / 2) + " рублей";
+            money = money + (zp / 2);
             break;
         case 2:
-            var drink_boyarin = Math.floor(Math.random() * 4) + 2;
-            video.src = "files/video/ozon.mp4";
-            video_name.textContent = "В честь праздника можно и...";
-            video_subname.textContent = "Вы потеряли 20 рублей и " + drink_boyarin + " здоровья.";
-            health = health - drink_boyarin;
-            healthchange();
+            event2_subname.textContent = "Вы решили вынести бутылку пива с магазина (а вдруг получиться), но пропажу обнаружили. У вас забрала бутылку и половину ЗП. Вы заработали " + (zp / 2) + " рублей";
+            money = money + (zp / 2);
+            break;
+        default:
+            event2_subname.textContent = "Сегодня день прошёл без происшествий. Вы заработали " + zp + " рублей.";
+            money = money + zp;
             break;
     }
-    drink_button.disabled = true;
-    money = money - 20;
     moneychange();
+    nextDay_withoutEvent();
+}
+
+function drink() {
+    if (money <= 0) {
+        event2.style.zIndex = "4";
+        event2.style.opacity = "1";
+        event2_name.textContent = "скачать бесплатно, удалить платно";
+        event2_subname.textContent = "У вас нет денег";
+    } else {
+        video_event.style.zIndex = "4";
+        video_event.style.opacity = "1";
+        var drink_random = Math.floor(Math.random() * 2) + 1;
+        video_name.style.display = "block";
+        video_subname.style.display = "block";
+        video_button.textContent = "ок";
+        switch (drink_random) {
+            case 1:
+                video.src = "files/video/hryap.mp4";
+                video_name.textContent = "В честь праздника можно и выпить";
+                if (health < 100 && health >= 95) {
+                    video_subname.textContent = "Вы потеряли 20 рублей, но восстановили здоровье до максимума.";
+                    health = 100;
+                    healthchange();
+                } else {
+                    if (health < 95 && health > 0) {
+                        video_subname.textContent = "Вы потеряли 20 рублей, но восстановили 5 единиц здоровья.";
+                        health = health + 5;
+                        healthchange();
+                    } else {
+                        video_subname.textContent = "Вы потеряли 20 рублей, но нормально так кайфанули.";
+                    }
+                }
+                break;
+            case 2:
+                var drink_boyarin = Math.floor(Math.random() * 4) + 2;
+                video.src = "files/video/ozon.mp4";
+                video_name.textContent = "В честь праздника можно и...";
+                video_subname.textContent = "Вы потеряли 20 рублей и " + drink_boyarin + " здоровья.";
+                health = health - drink_boyarin;
+                healthchange();
+                break;
+        }
+        drink_button.disabled = true;
+        money = money - 20;
+        moneychange();
+    }
 }
 
 function closeEvent() {
@@ -158,7 +191,7 @@ function nextDay() {
 }
 
 function nextDay_withoutEvent() {
-    day = day + 1;
+    drink_button.style.display = "block";
     holidays();
     if (mon === 2) {
         if (day === 29) {
@@ -181,7 +214,7 @@ function nextDay_withoutEvent() {
 
 function votkomuto() {
     day = day + 1;
-    daychecker();
+    eventchecker();
     if (mon === 2) {
         if (day === 29) {
             nextMon();
