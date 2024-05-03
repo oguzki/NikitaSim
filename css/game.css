@@ -94,6 +94,11 @@ h2 {
     flex-direction: column;
 }
 
+#casino_winlose {
+    font-family: Ubuntu-Regular;
+    border-radius: 5px;
+}
+
 .game-choice-button {
     font-family: Ubuntu-Regular;
     padding: 5px;
