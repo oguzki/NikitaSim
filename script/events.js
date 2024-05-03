@@ -79,7 +79,7 @@ function choice1() {
             var podrandom = Math.floor(Math.random() * 2);
             if (podrandom === 0) {
                 udacha();
-                event2_name.textContent = "кладмен мудак";
+                event2_name.textContent = "кладмен...";
                 event2_subname.textContent = "Оказалось, что данный прикол был заранее спланирован ФСБ. НО, добрые дяденьки отпустили Вас всего лишь за каких-то 300 рублей.";
                 money = money - 300;
                 moneychange();
@@ -152,7 +152,7 @@ function choice2() {
                 udacha();
                 event2_name.textContent = "давай раскумаримся по полной";
                 event2_subname.textContent = "Вы захавали соль и Вас, сделайте удивлённое лицо, накрыло. Вы проснулись на следующий день и потеряли 10 здоровья.";
-                health = health - 7;
+                health = health - 10;
                 healthchange();
                 nextDay_withoutEvent();
             }
@@ -178,7 +178,7 @@ function openchoice() {
     event1.style.opacity = "1";
 }
 
-function daychecker() {
+function eventchecker() {
     if (code == 'lilium' || code == 'Lilium') {
         switch (true) {
             case money >= 100000:
