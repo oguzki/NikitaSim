@@ -192,6 +192,7 @@ function nextDay() {
 
 function nextDay_withoutEvent() {
     drink_button.style.display = "block";
+    day = day + 1;
     holidays();
     if (mon === 2) {
         if (day === 29) {
