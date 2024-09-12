@@ -180,7 +180,7 @@ function reset_call_mother() {
 function nextDay() {
     switch (code) {
         case 'lilium':
-            votkomuto();
+            nextDay_withoutEvent();
             break;
         default:
             drink_button.style.display = "block";
