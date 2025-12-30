@@ -249,7 +249,12 @@ function nextYear() {
 }
 
 function daychange() {
-    document.getElementById('day_game').textContent = day;
+    if (day < 10) {
+        document.getElementById('day_game').textContent = "0" + day;
+    } else {
+        document.getElementById('day_game').textContent = day;
+    }
+    
 }
 
 function monchange() {

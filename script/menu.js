@@ -59,6 +59,14 @@ function play() {
     rules();
 }
 
+function secret_code_elem() {
+    health = 100;
+    year = 23;
+    day = 1;
+    mon = 1;
+    money = 2000;
+}
+
 function resume() {
     code = document.getElementById('parol').value;
     if (code == 0) {
@@ -76,31 +84,19 @@ function resume() {
                 break;
             case "necoarc":
             case "Necoarc":
-                health = 100;
-                year = 23;
-                day = 1;
-                mon = 1;
-                money = 2000;
+                secret_code_elem();
                 start();
                 document.getElementById('game_bg').innerHTML = '<video src="files/video/necoarc-anekdot.mp4" controls autoplay loop style="max-width: 57%"></video>'
                 break;
             case "babai":
             case "Babai":
-                health = 100;
-                year = 23;
-                day = 1;
-                mon = 1;
-                money = 2000;
+                secret_code_elem();
                 start();
                 document.getElementById('game_bg').innerHTML = '<video src="files/video/babai.mp4" controls autoplay loop style="max-width: 90%"></video>'
                 break;
             case "tatarstan":
             case "Tatarstan":
-                health = 100;
-                year = 23;
-                day = 1;
-                mon = 1;
-                money = 2000;
+                secret_code_elem();
                 start();
                 document.getElementById('game_bg').innerHTML = '<video src="files/video/tarakan.mp4" controls autoplay loop style="max-width: 90%"></video>'
                 break;
@@ -109,8 +105,8 @@ function resume() {
                 var header1 = document.querySelectorAll('.game-menu');
                 var mark1 = document.querySelectorAll('.game_hud');
                 health = 100;
-                year = 12;
-                day = 12;
+                year = 4;
+                day = 24;
                 mon = 7;
                 money = 333;
                 document.body.style.backgroundColor = "#a1303f";
