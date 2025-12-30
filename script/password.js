@@ -17,55 +17,73 @@ function generate() {
                 event2_button.textContent = "Принять судьбу";
             } else {
                 event2_name.textContent = "ваш пароль:";
-                if (mon < 10 && day < 10 && health < 100 && health >= 10) {
-                    var password = "0" + health + "-" + year + "Y" + "0" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
+
+                if (health < 10) {
+                    pass_health = "00" + health
+                } else if (health < 100 && health >= 10) {
+                    pass_health = "0" + health
                 } else {
-                    if (mon < 10 && day < 10 && health < 10) {
-                        var password = "0" + "0" + health + "-" + year + "Y" + "0" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
-                    }
-
-                    if (mon < 10 && day < 10 && health === 100) {
-                        var password = health + "-" + year + "Y" + "0" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
-                    }
-
-                    if (mon >= 10 && day >= 10 && health === 100) {
-                        var password = health + "-" + year + "Y" + day + "-" + mon + "C" + "-" + (money * 2);
-                    }
-
-                    if (mon >= 10 && day >= 10 && health < 100 && health >= 10) {
-                        var password = "0" + health + "-" + year + "Y" + day + "-" + mon + "C" + "-" + (money * 2);
-                    }
-
-                    if (mon >= 10 && day >= 10 && health < 10) {
-                        var password = "0" + "0" + health + "-" + year + "Y" + day + "-" + mon + "C" + "-" + (money * 2);
-                    }
-
-                    if (mon >= 10 && health === 100) {
-                        var password = health + "-" + year + "Y" + "0" + day + "-" + mon + "C" + "-" + (money * 2);
-                    }
-
-                    if (mon >= 10 && health < 100 && health >= 10) {
-                        var password = "0" + health + "-" + year + "Y" + "0" + day + "-" + mon + "C" + "-" + (money * 2);
-                    }
-
-                    if (mon >= 10 && health < 10) {
-                        var password = "0" + "0" + health + "-" + year + "Y" + "0" + day + "-" + mon + "C" + "-" + (money * 2);
-                    }
-
-                    if (day >= 10 && health === 100) {
-                        var password = health + "-" + year + "Y" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
-                    }
-
-                    if (day >= 10 && health < 100 && health >= 10) {
-                        var password = "0" + health + "-" + year + "Y" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
-                    }
-
-                    if (day >= 10 && health < 10) {
-                        var password = "0" + "0" + health + "-" + year + "Y" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
-                    }
+                    pass_health = health
                 }
-                event2_subname.textContent = password;
+
+                if (day < 10) {
+                    pass_day = "0" + day
+                } else {
+                    pass_day = day
+                }
+
+                if (mon < 10) {
+                    pass_mon = "0" + mon
+                } else {
+                    pass_mon = mon
+                }
+
+                event2_subname.textContent = pass_health + "-" + year + "Y" + pass_day + "-" + pass_mon + "C-" + (money * 2);
                 console.log(password);
+
+
+
+                
+                // if (mon < 10 && day < 10 && health < 100 && health >= 10) {
+                //     var password = "0" + health + "-" + year + "Y" + "0" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
+                // } else {
+                //     if (mon < 10 && day < 10 && health < 10) {
+                //         var password = "0" + "0" + health + "-" + year + "Y" + "0" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
+                //     }
+                //     if (mon < 10 && day < 10 && health === 100) {
+                //         var password = health + "-" + year + "Y" + "0" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
+                //     }
+                //     if (mon >= 10 && day >= 10 && health === 100) {
+                //         var password = health + "-" + year + "Y" + day + "-" + mon + "C" + "-" + (money * 2);
+                //     }
+                //     if (mon >= 10 && day >= 10 && health < 100 && health >= 10) {
+                //         var password = "0" + health + "-" + year + "Y" + day + "-" + mon + "C" + "-" + (money * 2);
+                //     }
+                //     if (mon >= 10 && day >= 10 && health < 10) {
+                //         var password = "0" + "0" + health + "-" + year + "Y" + day + "-" + mon + "C" + "-" + (money * 2);
+                //     }
+                //     if (mon >= 10 && health === 100) {
+                //         var password = health + "-" + year + "Y" + "0" + day + "-" + mon + "C" + "-" + (money * 2);
+                //     }
+                //     if (mon >= 10 && health < 100 && health >= 10) {
+                //         var password = "0" + health + "-" + year + "Y" + "0" + day + "-" + mon + "C" + "-" + (money * 2);
+                //     }
+                //     if (mon >= 10 && health < 10) {
+                //         var password = "0" + "0" + health + "-" + year + "Y" + "0" + day + "-" + mon + "C" + "-" + (money * 2);
+                //     }
+                //     if (day >= 10 && health === 100) {
+                //         var password = health + "-" + year + "Y" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
+                //     }
+                //     if (day >= 10 && health < 100 && health >= 10) {
+                //         var password = "0" + health + "-" + year + "Y" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
+                //     }
+                //     if (day >= 10 && health < 10) {
+                //         var password = "0" + "0" + health + "-" + year + "Y" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
+                //     }
+                // }
+                
+                // event2_subname.textContent = password;
+                // console.log(password);
             }
             break;
     }
