@@ -258,11 +258,19 @@ function daychange() {
 }
 
 function monchange() {
-    document.getElementById('mon_game').textContent = mon;
+    if (mon < 10) {
+        document.getElementById('mon_game').textContent = "0" + mon;
+    } else {
+        document.getElementById('mon_game').textContent = mon;
+    }
 }
 
 function yearchange() {
-    document.getElementById('year_game').textContent = year;
+    if (year < 10) {
+        document.getElementById('year_game').textContent = "0" + year;
+    } else {
+        document.getElementById('year_game').textContent = year;
+    }
 }
 
 function moneychange() {
