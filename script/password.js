@@ -41,9 +41,8 @@ function generate() {
                 event2_subname.textContent = pass_health + "-" + year + "Y" + pass_day + "-" + pass_mon + "C-" + (money * 2);
                 console.log(password);
 
+                // old password generator (много букв)
 
-
-                
                 // if (mon < 10 && day < 10 && health < 100 && health >= 10) {
                 //     var password = "0" + health + "-" + year + "Y" + "0" + day + "-" + "0" + mon + "C" + "-" + (money * 2);
                 // } else {
